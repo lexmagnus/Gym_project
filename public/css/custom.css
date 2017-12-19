@@ -9,7 +9,8 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 #home,
 #serv,
 #free,
-#about {
+#about,
+#pricing_table {
   margin-top: 10px;
   margin-bottom: 10px;
   /*ver bem isto*/
@@ -20,6 +21,69 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   width: 80%;
   height: 100vh;
   padding: 10px; }
+
+  /*================================ pricing tables ============================*/
+.col-pricing {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.price-box {
+  background: #fff;
+  color: #555;
+  list-style-type: none;
+  border: 1px solid #555;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.price-box:hover,
+.price-box.best {
+  box-shadow: 0 10px 15px 0 #000;
+}
+
+.price-box .header-pricing {
+  width: 100%;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+  font-size: 25px;
+}
+
+.price-box .header-pricing.header-orange {
+  background-color: #e8491d;
+}
+
+.price-box li {
+
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.price-box .emph {
+  background-color: #f4f4f4;
+  font-size: 20px;
+}
+
+.button-pricing {
+  background-color: #e8491d;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media(max-width:700px) {
+  .col-pricing {
+    width: 100%;
+  }
+}
 
 /*================================ CABE├çALHO ============================*/
 * {
@@ -42,6 +106,17 @@ body {
   margin: auto; }
 
 /* Header **/
+.dropdown{
+  float: right;
+}
+
+/* Imagem do user */
+#log-teste{
+  margin-top: 10px;
+  margin-left:30px;
+  position: relative;
+}
+
 header {
   background: #35424a;
   color: #e8491d;
@@ -274,9 +349,15 @@ ul:not(#ulperfil) {
   margin: 0;
   padding: 0;
   overflow: hidden; }
+.liteste {
+  float: right;
+}
 
-ul:not(#ulperfil) li {
-  float: right; }
+
+/* ul:not(#ulperfil)  li {
+  float: right; } */
+
+
 
 /*li a{
     margin:0px;

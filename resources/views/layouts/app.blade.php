@@ -59,13 +59,15 @@
             <li class="liteste"><a href="#free">Free-Trial</a></li>
 			<li class="liteste"><a href="#serv">Serviços</a></li>
 			<li class="liteste"><a href="#home">Home</a></li>
+			
           </ul>
 		</nav>
 		@else
 		<ul class="ullogout">
+		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">
-				<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
+				
 				{{ Auth::user()->username }}
 				</a>
 				<div class="dropdown-content">
@@ -94,7 +96,9 @@
 		  @endif
 
       </div>
+	  
     </header>
+	
 <body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
