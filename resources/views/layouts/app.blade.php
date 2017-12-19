@@ -29,6 +29,27 @@
 		</div>
 		@if (Auth::guest())
         <nav class="navclass">
+		<!-- menu hamburger --> 
+		<span class="open-slide">
+      			<a href="#" onclick="openSlideMenu()">
+        	<svg width="30" height="30">
+            	<path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            	<path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            	<path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        	</svg>
+      			</a>
+	</span>
+	<script>
+    function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
+    }
+
+    function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+    }
+  </script>
           <ul class="ulteste">
 		  	<li id="login">
             <!-- <li id="login"> -->
@@ -62,6 +83,15 @@
 			
           </ul>
 		</nav>
+		<!-- menu hamburger aberto--> 
+	<div id="side-menu" class="side-nav">
+    	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    	<li class="liteste2"><a href="#home">Home</a></li>
+		<li class="liteste2"><a href="#serv">Serviços</a></li>
+		<li class="liteste2"><a href="#free">Free-Trial</a></li>
+		<li class="liteste2"><a href="{{ url('/register') }}">Registo</a></li>
+	  </div>
+	  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		@else
 		<ul class="ullogout">
 		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
@@ -100,6 +130,7 @@
     </header>
 	
 <body>
+	<div id= main> </div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

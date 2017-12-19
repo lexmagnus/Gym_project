@@ -22,6 +22,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   height: 100vh;
   padding: 10px; }
 
+<<<<<<< HEAD
   /*================================ pricing tables ============================*/
 .col-pricing {
   float: left;
@@ -85,6 +86,50 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   }
 }
 
+=======
+/* menu responsivo */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #35424a;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; }
+
+.open-slide {
+  float: right; }
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s; }
+
+.side-nav a:hover {
+  color: #fff;
+  background-color: black; }
+
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+  margin-left: 0px; }
+
+@media (max-width: 1000px) {
+  .ulteste {
+    display: none; } }
+@media (min-width: 1000px) {
+  .open-slide {
+    display: none; } }
+/* -----------------*/
+>>>>>>> 4b6f06855fc71ec088d4610d27911bf47d48a679
 /*================================ CABE├çALHO ============================*/
 * {
   margin: 0;
@@ -279,7 +324,7 @@ input[type=password] {
 #forgot:hover {
     background-color: $laranja;;
 } */
-
+/*ATUALMENTE FORA DE USO*/
 .loginbox {
   top: 95px;
   color: #35424a;
@@ -298,9 +343,6 @@ input[type=password] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border: #e8491d 3px solid; }
-
-  .loginbox:hover {
-    box-shadow: 0 15px 39px 0 rgba(0, 0, 0, 0.2); }
 
 /*==========================BOXES  DE AVISO====================*/
 .messages {
@@ -518,9 +560,6 @@ main .helper span {
   font-weight: normal;
   margin-bottom: 0; }
 
-.menu .avatar h2:hover {
-  color: #e8491d; }
-
 .menu #ulperfil {
   list-style: none;
   /*padding: 0.5em 0;*/
@@ -687,7 +726,6 @@ main .helper span {
   float: right; }
 
 .prof_cont h3,
-.prof_cont h5,
 .prof_cont p {
   color: white; }
 
