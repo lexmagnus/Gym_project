@@ -12,7 +12,6 @@ use App\Pessoa;
 use App\Morada;
 use Image;
 
-//pedro teste
 class PerfilController extends Controller
 {
     public function index($username){

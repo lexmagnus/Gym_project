@@ -93,9 +93,10 @@
 	  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		@else
 		<ul class="ullogout">
+		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">
-				<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
+				
 				{{ Auth::user()->username }}
 				</a>
 				<div class="dropdown-content">
