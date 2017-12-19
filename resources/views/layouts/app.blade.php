@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}" />
 	<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('js/custom.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -29,7 +30,8 @@
 		@if (Auth::guest())
         <nav class="navclass">
           <ul class="ulteste">
-            <li id="login">
+		  	<li id="login">
+            <!-- <li id="login"> -->
 				<!--<a href="{{ url('/login') }}">Login</a>-->
 				<a id="login-trigger" href="#" onClick="return false;">Login</a>
 			
@@ -67,7 +69,7 @@
 				{{ Auth::user()->username }}
 				</a>
 				<div class="dropdown-content">
-					<a href="/home/{{Auth::user()->username}}">Ver Perfil</a>
+					<a onclick="load_main_content()" href="/home/{{Auth::user()->username}}" id="jtest" name="/home/{{Auth::user()->username}}/perfil">Ver Perfil</a>
 					<a href="#">Ver amigos</a>
 					<a href="#">Ver pagamentos</a>
 					<a href="#">Ver horários</a>
@@ -86,6 +88,7 @@
 			<li class="liteste"><a href="/dadosPessoais">Dados Pessoais</a></li>
 			<li class="liteste"><a href="/pagamentos">Pagamentos</a></li>
 			<li class="liteste"><a href="/pt">Contate o PT</a></li>
+			<li class="liteste"><a href="/services">Serviços</a></li>
 			<li class="liteste"><a href="/home">Home</a></li>
 		  </ul>
 		  @endif
@@ -94,9 +97,16 @@
     </header>
 <body>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script>
+
+	/*$(document).ready(function(){
+		$('#jteste').click(function(){
+			$('#contenttest').load('/main_content/');
+		});
+	});*/
+
 		//Abre menu com click
 		$(document).ready(function(){
 			$('#login-trigger').click(function() {
@@ -165,7 +175,6 @@
 		}); */
 		
 	</script>
-
 	@yield('content')
 
 </body>

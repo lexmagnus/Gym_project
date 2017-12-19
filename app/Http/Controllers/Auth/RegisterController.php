@@ -96,7 +96,7 @@ class RegisterController extends Controller
             'user_id' => $user->id,
         ]);
 
-        $user->pessoa->cliente= Cliente::create([
+        $user->pessoa->cliente = Cliente::create([
             'pessoa_id' => $user->pessoa->id,
         ]);
 
@@ -106,6 +106,7 @@ class RegisterController extends Controller
     }
 
     //Override
+    // função para que o login não seja efectuado automaticamente
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
@@ -135,7 +136,8 @@ class RegisterController extends Controller
             Session::flash('activated', 'Verificação efectuada com sucesso! Faça login e ENJOY THE RIDE!');
             return redirect('/');
         }else{
-            return 'User not found';
+            Session::flash('error_token', 'Utilizador não encontrado');
+            return redirect('home');
         }
     }
 }

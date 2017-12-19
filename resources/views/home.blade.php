@@ -7,6 +7,11 @@
                         <strong>{{ session('login') }}</strong>
                     </div>
                 @endif
+                @if(session('error_token'))
+                    <div class="error">
+                        <strong>{{ session('error_token') }}</strong>
+                    </div>
+                @endif
             </div>
                 
                     @if (Auth::user()->isAdmin())

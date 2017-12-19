@@ -52,4 +52,12 @@ class LoginController extends Controller
         Session::flash('login', 'Login efectuado com sucesso!');
         return array_merge($request->only($this->username(), 'password'), ['status' => 1]);
     }
+
+    public function authenticate()
+    {
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1])) {
+            // Authentication passed...
+            return redirect()->intended('home');
+        }
+    }
 }

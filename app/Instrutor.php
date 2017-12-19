@@ -10,4 +10,10 @@ class Instrutor extends Model
     {
         return $this->belongsTo('App\Pessoa');
     }
+
+    // Um instrutor tem muitos serviços
+    public function services()
+    {
+        return $this->hasMany('App\Service');
+    }
 }

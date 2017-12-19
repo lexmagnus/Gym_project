@@ -25,7 +25,7 @@ class CreatePessoaTable extends Migration
             $table->integer('user_id')->unsigned()->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('morada_id')->unsigned()->index()->nullable();
-            $table->foreign('morada_id')->references('id')->on('morada')->onDelete('cascade');
+            $table->foreign('morada_id')->references('id')->on('moradas');
             $table->timestamps();
         });
     }

@@ -1,7 +1,3 @@
-@extends('layouts.appperfil')
-
-@section('content2')
-
 <div class="profile_d">
 <img id="img_prof" src="/uploads/avatars/{{Auth::user()->avatar}}" alt="Avatar" style="height:100%">
   <div class="prof_cont">
@@ -36,5 +32,3 @@
       </form>
   </div>
 </div>
-
-@endsection

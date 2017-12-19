@@ -16,10 +16,22 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/home/{username}', 'PerfilController@index');
+Route::get('/home/{username}/perfil', 'PerfilController@perfil');
 Route::get('/home/{username}/edit', 'PerfilController@show_edit');
+Route::get('/home/{username}/addMorada', 'MoradaController@index');
+Route::get('/home/{username}/altEmail', 'PerfilController@email');
+Route::get('/home/{username}/altPassword', 'PerfilController@pass');
+Route::post('/home/{username}/altPassword', 'PerfilController@edit_pass');
+Route::post('/home/{username}/altEmail', 'PerfilController@edit_email');
+Route::post('/home/{username}/addMorada', 'MoradaController@add');
 Route::post('/home/{username}/edit', 'PerfilController@edit');
 Route::post('/home/{username}', 'PerfilController@update_avatar');
+Route::get('/services', 'ServicesController@services');
 
+/*Route::get("/home/{username}", function()
+{
+   return View::make("perfil");
+});*/
 //Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 //Route::get('/about', 'PagesController@about');

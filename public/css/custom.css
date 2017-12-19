@@ -2,7 +2,7 @@
 /* 
 Sacar e install o Ruby, se n├úo tiverem: https://rubyinstaller.org/
 Instalar o sass, se n├úo tiverem: gem install sass
-F:\MEI\ACR_Project\Gym_project> sass --watch resources\assets\sass\costum.scss:public\css\costum.css */
+F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:public\css\custom.css */
 /* div do menu */
 /*VARIAVEIS*/
 /*divisorias / categorias do website*/
@@ -204,7 +204,7 @@ input[type=password] {
 #forgot:hover {
     background-color: $laranja;;
 } */
-/*ATUALMENTE FORA DE USO*/
+
 .loginbox {
   top: 95px;
   color: #35424a;
@@ -223,6 +223,9 @@ input[type=password] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border: #e8491d 3px solid; }
+
+  .loginbox:hover {
+    box-shadow: 0 15px 39px 0 rgba(0, 0, 0, 0.2); }
 
 /*==========================BOXES  DE AVISO====================*/
 .messages {
@@ -434,6 +437,9 @@ main .helper span {
   font-weight: normal;
   margin-bottom: 0; }
 
+.menu .avatar h2:hover {
+  color: #e8491d; }
+
 .menu #ulperfil {
   list-style: none;
   /*padding: 0.5em 0;*/
@@ -600,6 +606,7 @@ main .helper span {
   float: right; }
 
 .prof_cont h3,
+.prof_cont h5,
 .prof_cont p {
   color: white; }
 
