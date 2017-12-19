@@ -22,7 +22,6 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   height: 100vh;
   padding: 10px; }
 
-<<<<<<< HEAD
   /*================================ pricing tables ============================*/
 .col-pricing {
   float: left;
@@ -86,7 +85,6 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   }
 }
 
-=======
 /* menu responsivo */
 .side-nav {
   height: 100%;
@@ -129,7 +127,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   .open-slide {
     display: none; } }
 /* -----------------*/
->>>>>>> 4b6f06855fc71ec088d4610d27911bf47d48a679
+
 /*================================ CABE├çALHO ============================*/
 * {
   margin: 0;
