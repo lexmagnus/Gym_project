@@ -17,7 +17,6 @@ class CreateClienteTable extends Migration
             $table->integer('pessoa_id')->unsigned()->unique();
             $table->primary('pessoa_id');
             $table->foreign('pessoa_id')->references('id')->on('pessoas')->onDelete('cascade');
-            $table->foreign('services_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });
     }

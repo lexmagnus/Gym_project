@@ -16,6 +16,6 @@ class Cliente extends Model
     // muitos cliente tem muitos serviços
     public function services()
     {
-        return $this->belongsToMany('App\Service');
+        return $this->belongsToMany('App\Services');
     }
 }

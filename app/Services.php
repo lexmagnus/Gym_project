@@ -11,14 +11,9 @@ class Services extends Model
     //     return $this->hasMany('App\Cliente');
     // }
 
-    public function services()
-    {
-        return $this->belongsTo('App\Services');
-    }
-
     // muitos serviços têm muitos clientes
     public function clientes()
     {
-        return $this->belongsToMany('App\Cliente');
+        return $this->hasMany('App\Clientes');
     }
 }
