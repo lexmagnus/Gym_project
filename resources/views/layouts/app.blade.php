@@ -80,6 +80,7 @@
             <li class="liteste"><a href="#free">Free-Trial</a></li>
 			<li class="liteste"><a href="#serv">Serviços</a></li>
 			<li class="liteste"><a href="#home">Home</a></li>
+			
           </ul>
 		</nav>
 		<!-- menu hamburger aberto--> 
@@ -125,7 +126,9 @@
 		  @endif
 
       </div>
+	  
     </header>
+	
 <body>
 	<div id= main> </div>
 
