@@ -10,8 +10,9 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 #serv,
 #free,
 #about,
-#pricing_table {
-  margin-top: 10px;
+#pricing_table,
+#regist {
+  margin-top: 20px;
   margin-bottom: 10px;
   /*ver bem isto*/
   margin: auto;
@@ -21,6 +22,12 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   width: 80%;
   height: 100vh;
   padding: 10px; }
+  
+  h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   /*================================ pricing tables ============================*/
 .col-pricing {
@@ -222,10 +229,42 @@ input[type=password] {
 #btopo:hover {
   background-color: #e8491d; }
 
+
+  /*=================== FOOTER ===================*/ 
+  footer {
+    margin-top: 150px;
+    width: 80%;
+    display: inline-block;
+    height: 50px;
+    background-color: white;
+    margin-left: 10%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e8491d;
+  }
+    .copyright{
+      width: 50%;
+      float:left;
+      background-color: #35424a;
+      height: 100%;
+      text-align: center;
+
+    }
+    .social{
+      width:50%;
+      float: right;
+      background-color: blue;
+      height:100%;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+    }
+
+  /*====================fim FOOTER =================*/
 /*=================== CAIXA DE LOGIN =====================*/
 #lbutton {
   font-size: 14px;
-  background-color: #35424a;
+  background-color: #0d5c8a;
   color: white;
   padding: 14px;
   margin: 10px;
@@ -324,17 +363,16 @@ input[type=password] {
 } */
 /*ATUALMENTE FORA DE USO*/
 .loginbox {
-  top: 95px;
   color: #35424a;
   padding: 30px;
   width: 25%;
   border-style: solid;
   border-width: 1px;
-  position: absolute;
+  position: relative;
   margin: 35%;
   margin-top: 5%;
   right: 0;
-  clear: both;
+  /*clear: both;*/
   background-color: #f4f4f4;
   /*border-radius: 5px;*/
   border-radius: 20px;

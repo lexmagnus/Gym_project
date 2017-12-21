@@ -42,12 +42,12 @@
 	<script>
     function openSlideMenu(){
       document.getElementById('side-menu').style.width = '250px';
-      document.getElementById('main').style.marginLeft = '250px';
+      //document.getElementById('main').style.marginLeft = '250px';
     }
 
     function closeSlideMenu(){
       document.getElementById('side-menu').style.width = '0';
-      document.getElementById('main').style.marginLeft = '0';
+      //document.getElementById('main').style.marginLeft = '0';
     }
   </script>
           <ul class="ulteste">
@@ -71,12 +71,13 @@
 					<input type="checkbox" name="remember" {{ old( 'remember') ? 'checked' : ''}}> Remember </br>
 					<button type="submit" id="lbutton">LOGIN</button>
 
-					<a id="create_account" href="{{ url('/register') }}">Register</a><b> - </b>
+					<a id="create_account" href="#regist">Register</a><b> - </b>
 					<a id="forgot" href="{{ url('/password/reset') }}">Forgot your Password?</a>
 					
 				</form>
 			</li>
-			<li class="liteste"><a href="{{ url('/register') }}">Registo</a></li>
+			<li class="liteste"><a href="#pricing_table">Preços</a></li>
+			<li class="liteste"><a href="#about">Sobre</a></li>
             <li class="liteste"><a href="#free">Free-Trial</a></li>
 			<li class="liteste"><a href="#serv">Serviços</a></li>
 			<li class="liteste"><a href="#home">Home</a></li>
@@ -89,7 +90,7 @@
     	<li class="liteste2"><a href="#home">Home</a></li>
 		<li class="liteste2"><a href="#serv">Serviços</a></li>
 		<li class="liteste2"><a href="#free">Free-Trial</a></li>
-		<li class="liteste2"><a href="{{ url('/register') }}">Registo</a></li>
+		<li class="liteste2"><a href="#about">Sobre</a></li>
 	  </div>
 	  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		@else
@@ -130,7 +131,7 @@
     </header>
 	
 <body>
-	<div id= main> </div>
+	<!--<div id= main> </div>-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -213,5 +214,4 @@
 	@yield('content')
 
 </body>
-
 </html>

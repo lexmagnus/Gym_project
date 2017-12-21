@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        
         /*
          * Package Service Providers...
          */
@@ -180,7 +180,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
         Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
-
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
     ],
 
     /*
@@ -230,7 +230,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
-
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
     ],
 
 ];
