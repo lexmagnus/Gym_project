@@ -24,5 +24,5 @@
                     <br><p><strong>{{ Auth::user()->username }}, You are logged in as Client!</strong></p>
                 
                     @endif
-
+    
 @endsection
