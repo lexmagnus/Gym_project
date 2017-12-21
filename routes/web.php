@@ -15,7 +15,13 @@ Auth::routes();
 //Route::get('/', 'HomeController@index');
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/payment', 'PaymentController@index');
+
 Route::get('/home/{username}', 'PerfilController@index');
+
+Route::get('/home/{username}/payment', 'PaymentController@index');
+Route::post('/home/{username}/payment', 'PerfilController@subscribe_process');
+
 Route::get('/home/{username}/perfil', 'PerfilController@perfil');
 Route::get('/home/{username}/edit', 'PerfilController@show_edit');
 Route::get('/home/{username}/addMorada', 'MoradaController@index');
