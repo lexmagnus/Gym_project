@@ -182,7 +182,7 @@
 					  top: scrollTop < originalY
 					  ? 0
 					: scrollTop - originalY + topMargin
-				}, 100);
+				}, 0);
 			});
 		})(jQuery);
 		
