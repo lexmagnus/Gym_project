@@ -181,6 +181,7 @@ return [
         Laravel\Cashier\CashierServiceProvider::class,
         //Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        //a bombar
     ],
 
     /*
