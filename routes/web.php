@@ -27,7 +27,7 @@ Route::post('/home/{username}/addMorada', 'MoradaController@add');
 Route::post('/home/{username}/edit', 'PerfilController@edit');
 Route::post('/home/{username}', 'PerfilController@update_avatar');
 Route::get('/services', 'ServicesController@services');
-Route::get('events', 'EventController@index');
+Route::get('services', 'EventController@index');
 /*Route::get("/home/{username}", function()
 {
    return View::make("perfil");
