@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+
 class EventController extends Controller
 {
     public function index()
