@@ -179,7 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
-        Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
+        //Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
     ],
 
