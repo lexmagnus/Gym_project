@@ -369,6 +369,7 @@ input[type=password] {
   border-style: solid;
   border-width: 1px;
   position: relative;
+  z-index:-1;
   margin: 35%;
   margin-top: 5%;
   right: 0;
@@ -562,13 +563,15 @@ main .helper span {
   display: block; }
 
 .menu {
+  
+  
   background: #466170;
   height: 84vh;
   width: 240px;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 5;
+  z-index: 900;
   outline: none;
   border-right: #e8491d 3px solid; }
 

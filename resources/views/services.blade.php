@@ -13,7 +13,7 @@
     </style>
 </head>
  
-    <div style="max-width: 800px; margin:20px;">
+    <div style="max-width: 650px; margin:20px; position: absolute; z-index: -1;">
         {!! $calendar->calendar() !!}
         {!! $calendar->script() !!}
     </div>

@@ -79,6 +79,32 @@
                     <div class="aboutcontainer">
                         <div class="aboutcontent">
                             <h2>Sobre o nosso ginásio</h2>
+                            <h3>Venha visitar-nos: </h3>
+                            <div id="googleMap" style="width:100%; height:600px; margin: 20px 0 auto;position: relative; z-index: -1;"></div>
+                                
+                                <script>
+                                function myMap() {
+                                // var mapProp= {
+                                //     center:new google.maps.LatLng(32.658978, -16.924315),
+                                //     zoom:18,
+                                // };
+                                var uluru = { lat: 32.658978, lng: -16.924315 };
+                                    var map = new google.maps.Map(document.getElementById('googleMap'), {
+                                        zoom: 18,
+                                        center: uluru
+                                    });
+                                    var marker = new google.maps.Marker({
+                                        position: uluru,
+                                        map: map
+                                    });
+                                
+                                //var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                }
+                                </script>
+
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFivJePR3xH39kBRZ3X8W-H7PjaiftQNo&callback=myMap"></script>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,6 +155,7 @@
                         </div>
                     </div>
                 </div>
+                
             </section>
             <section id="slide6">
                 <div id="regist">
