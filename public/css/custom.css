@@ -33,6 +33,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 .col-pricing {
   float: left;
   width: 33.3%;
+  height: 80%;
   padding: 8px;
   box-sizing: border-box;
 }
@@ -88,7 +89,8 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 
 @media(max-width:700px) {
   .col-pricing {
-    width: 100%;
+    width: 33,3%;
+    height: 80%;
   }
 }
 
@@ -232,34 +234,21 @@ input[type=password] {
 
   /*=================== FOOTER ===================*/ 
   footer {
-    margin-top: 150px;
-    width: 80%;
+    background: #466170;
+    height: 16vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    outline: none;
     display: inline-block;
-    height: 50px;
-    background-color: white;
-    margin-left: 10%;
-    border-style: solid;
-    border-width: 2px;
+    border-top: 3px solid;
     border-color: #e8491d;
+    background-color: #35424a;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 300px;
   }
-    .copyright{
-      width: 50%;
-      float:left;
-      background-color: #35424a;
-      height: 100%;
-      text-align: center;
-
-    }
-    .social{
-      width:50%;
-      float: right;
-      background-color: blue;
-      height:100%;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-    }
-
   /*====================fim FOOTER =================*/
 /*=================== CAIXA DE LOGIN =====================*/
 #lbutton {
@@ -573,7 +562,7 @@ main .helper span {
   left: 0;
   z-index: 900;
   outline: none;
-  border-right: #e8491d 3px solid; }
+  border-bottom: #e8491d 3px solid; }
 
 .menu .avatar {
   background: #35424a;
@@ -636,8 +625,6 @@ main .helper span {
   outline: none; }
 
 @media screen and (max-width: 900px) and (min-width: 400px) {
-  body {
-    padding-left: 90px; }
 
   .menu {
     width: 90px; }

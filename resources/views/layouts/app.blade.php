@@ -42,12 +42,12 @@
 	<script>
     function openSlideMenu(){
       document.getElementById('side-menu').style.width = '250px';
-      //document.getElementById('main').style.marginLeft = '250px';
+     // document.getElementById('main').style.marginLeft = '250px';
     }
 
     function closeSlideMenu(){
       document.getElementById('side-menu').style.width = '0';
-      //document.getElementById('main').style.marginLeft = '0';
+     // document.getElementById('main').style.marginLeft = '0';
     }
   </script>
           <ul class="ulteste">
@@ -214,4 +214,7 @@
 	@yield('content')
 
 </body>
+<footer>
+					<p>@Copyright 2017/2018 - Grupo 5 ACR</p>
+            </footer>
 </html>

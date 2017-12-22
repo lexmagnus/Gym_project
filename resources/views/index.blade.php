@@ -229,13 +229,4 @@
                     </div>
                 </div>
             </section>
-
-            <footer>
-                <div class="copyright">
-                    <p>@Copyright 2017/2018 - Grupo 5 ACR</p>
-                </div>
-                 <div class="social">
-                    <a href="#" class="face">f</a>
-                </div>
-            </footer>
 @endsection
