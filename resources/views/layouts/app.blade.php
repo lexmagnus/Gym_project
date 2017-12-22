@@ -119,7 +119,7 @@
 				</div>
 			</li>
 			<li class="liteste"><a href="/dadosPessoais">Dados Pessoais</a></li>
-			<li class="liteste"><a href="/pagamentos">Pagamentos</a></li>
+			<li class="liteste"><a href="/payments">Payments</a></li>
 			<li class="liteste"><a href="/pt">Contate o PT</a></li>
 			<li class="liteste"><a href="/services">Serviços</a></li>
 			<li class="liteste"><a href="/home">Home</a></li>
