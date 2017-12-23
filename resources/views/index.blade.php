@@ -162,11 +162,8 @@
                     <div class="registcontainer">
                         <div class="registcontent">
                             <h2>Registo</h2>
-                            @if(session('status'))
-        <div class="alert alert-sucess">
-            {{ session('status') }}
-        </div>
-        @endif
+                   
+                   
         <div class="loginbox">
         <form role="form" method="POST" action="{{ url('/register') }}">
 

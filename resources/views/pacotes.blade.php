@@ -62,37 +62,37 @@
                     @if( !empty($plans) )
 
                         @if($is_subscribed)
-                            <p class="lead">You can always change your plan.</p>
+                        <div class="success">
+                                <strong>O seu plano atual é {{ $subscription->stripe_plan }}!</strong>
+                                <strong>Mas se quiser pode alterá-lo.</strong>
+                            </div>
                         @else
                             <div class="warning">
                                 <strong>Escolha o plano que melhor se adequa aos seus objetivos!</strong>
                             </div>
                         @endif
 
-                        @foreach($plans as $plan)
-                            <div class="col-sm-4">
-                                <div class="panel {{ ( $is_subscribed && $subscription->stripe_plan ==  $plan->id ) ? 'panel-success' :  'panel-primary' }}">
-                                    <div class="panel-heading text-uppercase">{{ $plan->id }}</div>
-                                    <div class="panel-body text-center">
-                                        <h3 class="modal-title">
-                                            {{ $plan->name }}
-                                        </h3>
-                                        <img class="img-responsive" src="{{ asset('img/coal.png') }}" alt="{{ $plan->name }} Coal">
+                        <h2>Tabela de Preços</h2>
 
-                                        <p>{{ $plan->currency }} {{ $plan->amount / 100 }} / {{ $plan->interval }}</p>
-                                    </div>
-                                    <div class="panel-footer">
-                                        @if( $is_subscribed &&  ( $subscription->stripe_plan ==  $plan->id ) )
-                                            <a href="#" class="btn btn-default btn-block">
-                                                Current Plan
-                                            </a>
-                                        @else
-                                            <a href="{{ route('plan', $plan->id) }}" class="btn btn-success btn-block">
-                                                Subscribe
-                                            </a>
-                                        @endif
-                                    </div>
-                                </div>
+                        @foreach($plans as $plan)
+
+                            <div class="col-pricing">
+                                <ul class="price-box">
+                                <li class="header-pricing">{{ $plan->name }}</li>
+                                <li class="emph"><strong>{{ $plan->currency }} {{ $plan->amount / 100 }} / {{ $plan->interval }}</strong></li>
+                                <li><strong>120GB</strong> Disk Space</li>
+                                <li><strong>100GB</strong> Data Transfer</li>
+                                <li><strong>Unlimited</strong> Domains</li>
+                                <li><strong>Unlimited</strong> Email Accounts</li>
+                                <li><strong>UNlimited</strong> FTP Accounts</li>
+                                <li class="emph">
+                                    @if( $is_subscribed &&  ( $subscription->stripe_plan ==  $plan->id ) )
+                                        <a href="#" class="button-pricing" onClick="return false;">Plano Atual</a>
+                                    @else
+                                        <a href="{{ route('plan', $plan->id) }}" class="button-pricing">Subscrever</a>
+                                    @endif
+                                </li>
+                                </ul>
                             </div>
                         @endforeach
 
@@ -104,10 +104,6 @@
                     @endif
                 </div>
             </div>
-
-            <p class="text-center">
-                <small><a href='http://www.freepik.com/free-vector/steam-train-design_951856.htm'>Train Image by Freepik</a></small>
-            </p>
         </div>
     </div>
 </div>

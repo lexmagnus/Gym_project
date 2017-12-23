@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Plan;
 use Illuminate\Support\Facades\Auth;
 
-class PaymentsController extends Controller
+class PacotesController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -24,6 +24,6 @@ class PaymentsController extends Controller
         // If subscribed get the subscription
         $subscription = Auth::user()->subscription('main');
 
-        return view('payments', compact('plans', 'is_subscribed', 'subscription'));
+        return view('pacotes', compact('plans', 'is_subscribed', 'subscription'));
     }
 }

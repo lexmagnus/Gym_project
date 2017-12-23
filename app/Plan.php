@@ -15,7 +15,7 @@ class Plan extends Model
 
         try {
             // Fetch all the Plans and cache it
-            return Cache::remember('stripe.plans', 60*24, function() {
+            return Cache::remember('stripe.plans', 1, function() {
                 return \Stripe\Plan::all()->data;
             });
         } catch ( \Exception $e ) {

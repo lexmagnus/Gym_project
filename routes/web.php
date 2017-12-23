@@ -16,10 +16,10 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){
 
-    Route::get('/payments', 'PaymentsController@index')->name('payments');
+    Route::get('/plan', 'PlanController@index')->name('plano');
     Route::get('/plan/{id}', 'PlanController@show')->name('plan');
 
-    /*Route::group(['prefix' => 'subscribe'], function(){
+    Route::group(['prefix' => 'subscribe'], function(){
 
         Route::post('/', 'PlanController@subscribe')->name('subscribe');
         Route::get('/cancel', 'PlanController@confirmCancellation')->name('confirmCancellation');
@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/invoices', 'InvoiceController@index')->name('invoices');
         Route::get('/invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
 
-    });*/
+    });
 });
 
 // Handling Stripe Webhooks
@@ -90,9 +90,9 @@ Route::group(['middleware' => 'instruct'], function () {
     }
     return view('index');
 })->name('home');*/
-
-Route::get('/users/{id}', function($id){
-    return $id.', You are logged in!';
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    // return what you want
 });
 //Auth::routes();
 
