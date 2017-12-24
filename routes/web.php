@@ -54,8 +54,21 @@ Route::post('/home/{username}/altEmail', 'PerfilController@edit_email');
 Route::post('/home/{username}/addMorada', 'MoradaController@add');
 Route::post('/home/{username}/edit', 'PerfilController@edit');
 Route::post('/home/{username}', 'PerfilController@update_avatar');
-Route::get('/services', 'ServicesController@services');
+Route::get('services', 'ServicesController@services');
 Route::get('services', 'EventController@index');
+
+Route::get('pt', [
+    'uses' => 'ChatController@getPT',
+    'as' => 'pt',
+    'middleware' => 'auth'
+    ]);
+
+Route::post('createpost', [
+    'uses' => 'ChatController@postCreate',
+    'as' => 'post.create',
+    'middleware' => 'auth'
+    ]);
+
 /*Route::get("/home/{username}", function()
 {
    return View::make("perfil");
