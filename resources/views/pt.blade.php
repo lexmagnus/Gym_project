@@ -15,11 +15,13 @@
         
     </section>
     <section>
-    <h1>What you say:</h1>
-    <form action="{{ route('post.create') }}" method="post">
-    <textarea id="new_post" name="body" rows="5" placeholder="enter your message"></textarea>
-
-    </form>
+        <h1>What you say:</h1>
+        <form action="{{ route('post.create') }}" method="post">
+        <textarea id="new_post" name="body" rows="5" placeholder="enter your message"></textarea>
+        <button type="submit">Send Message</button>
+        <input type="hidden" value="{{Session::token()}}" name="_token">
+        </form>
+        </form>
     </section>
     <script>
         var token = '{{Session::token()}}';
