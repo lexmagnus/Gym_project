@@ -6,12 +6,13 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 /* div do menu */
 /*VARIAVEIS*/
 /*divisorias / categorias do website*/
-#home,
+
 #serv,
 #free,
 #about,
 #pricing_table,
-#regist {
+#regist,#home {
+  display: block;
   margin-top: 20px;
   margin-bottom: 10px;
   /*ver bem isto*/
@@ -356,14 +357,13 @@ input[type=password] {
   width: 25%;
   border-style: solid;
   border-width: 1px;
-  position: relative;
+  /*position: relative;*/
   /*z-index:-1;*/
   margin: 35%;
   margin-top: 5%;
   right: 0;
   /*clear: both;*/
   background-color: #f4f4f4;
-  /*border-radius: 5px;*/
   border-radius: 20px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

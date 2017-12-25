@@ -77,6 +77,7 @@
 					
 				</form>
 			</li>
+			<li class="liteste"><a href="#regist">Inscrição</a></li>
 			<li class="liteste"><a href="#pricing_table">Preços</a></li>
 			<li class="liteste"><a href="#about">Sobre</a></li>
             <li class="liteste"><a href="#free">Free-Trial</a></li>

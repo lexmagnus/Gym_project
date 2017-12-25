@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+                @if(session('status'))
+                    <div class="warning">
+                        <strong>{{ session('status') }}</strong>
+                    </div>
+                @endif
    
                     <div class="loginbox">
 
