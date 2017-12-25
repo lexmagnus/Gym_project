@@ -761,3 +761,34 @@ main .helper span {
   left: 15%; }
 
 /*# sourceMappingURL=custom.css.map */
+
+.btn_link{
+  background:none!important;
+  border:none; 
+  padding:0!important;
+  
+  /*optional*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color:#069;
+  text-decoration:underline;
+  cursor:pointer;
+  
+}
+
+.faturas {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.faturas th, .faturas td {
+  text-align: left;
+  padding: 8px;
+}
+
+.faturas tr:nth-child(even){background-color: #f2f2f2}
+
+.faturas th {
+  background-color: #35424a;
+  color: white;
+}

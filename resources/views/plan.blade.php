@@ -11,12 +11,12 @@
                     </div>
                 @endif
 
-                <h1>{{ $plan['id'] }}</h1>
+                <!-- <h1>{{ $plan['id'] }}</h1> -->
                         
 
                             <div class="loginbox">
 
-                            <h2><!-- Ola {{ Auth::user()->username }}, escolheu o plano --> <b>{{ $plan['name'] }}</b></h2>
+                            <h2><!-- Ola {{ Auth::user()->username }}, escolheu o plano -->Pacote <b>{{ $plan['name'] }}</b></h2>
 
                             <h5>{{ $plan->amount / 100 }} {{ $plan->currency }}/{{ $plan->interval }}</h5>
                             <br>

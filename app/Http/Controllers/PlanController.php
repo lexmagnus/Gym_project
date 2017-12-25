@@ -116,13 +116,14 @@ class PlanController extends Controller
      */
     public function cancelSubscription(Request $request)
     {
+        //dd($request->user()->subscription('main')->cancel());
         try {
             $request->user()->subscription('main')->cancel();
         } catch ( \Exception $e) {
-            return redirect()->route('plan')->with('status', $e->getMessage());
+            return redirect()->route('plano')->with('status', $e->getMessage());
         }
 
-        return redirect()->route('plan')->with('status',
+        return redirect()->route('plano')->with('status',
             'Your Subscription has been canceled.'
         );
     }
@@ -141,7 +142,7 @@ class PlanController extends Controller
             return redirect()->route('plan')->with('status', $e->getMessage());
         }
 
-        return redirect()->route('plan')->with('status',
+        return redirect()->route('plano')->with('status',
             'Glad to see you back. Your Subscription has been resumed.'
         );
     }

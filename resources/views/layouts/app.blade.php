@@ -27,6 +27,7 @@
         <div id="branding">
           <h1><span class="highlight">Madeira</span> Gym</h1>
 		</div>
+
 		@if (Auth::guest())
         <nav class="navclass">
 		<!-- menu hamburger --> 
@@ -92,7 +93,7 @@
 		<li class="liteste2"><a href="#free">Free-Trial</a></li>
 		<li class="liteste2"><a href="#about">Sobre</a></li>
 	  </div>
-	  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
 		@else
 		<ul class="ullogout">
 		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
@@ -103,11 +104,7 @@
 				</a>
 				<div class="dropdown-content">
 					<a onclick="load_main_content()" href="/home/{{Auth::user()->username}}" id="jtest" name="/home/{{Auth::user()->username}}/perfil">Ver Perfil</a>
-					<a href="#">Ver amigos</a>
-					<a href="#">Ver pagamentos</a>
-					<a href="#">Ver horários</a>
-					<a href="#">inscrever em aulas</a>
-					<a href="#">Definições Pessoais</a>
+					<a href="{{ route('invoices') }}">Ver Faturas</a>
 					<a href="{{ url('/logout') }}" onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
 								Logout
