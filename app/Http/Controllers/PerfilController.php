@@ -27,7 +27,8 @@ class PerfilController extends Controller
         $morada = Morada::where(['id'=>($pessoa->morada_id)])->first();
         return view('perfil',compact('user', 'pessoa', 'morada'));
     }else
-    return view('perfil',compact('user', 'pessoa'));
+    
+        return view('perfil',compact('user', 'pessoa'));
         //dd($morada);
         //return [$user, $pessoa, $morada];
         

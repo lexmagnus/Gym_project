@@ -552,8 +552,6 @@ main .helper span {
   display: block; }
 
 .menu {
-  
-  
   background: #466170;
   height: 84vh;
   width: 240px;
@@ -563,6 +561,9 @@ main .helper span {
   z-index: 900;
   outline: none;
   border-bottom: #e8491d 3px solid; }
+  .Admin{
+    height: 100vh;
+  }
 
 .menu .avatar {
   background: #35424a;
@@ -791,4 +792,9 @@ main .helper span {
 .faturas th {
   background-color: #35424a;
   color: white;
+}
+
+table.clienttab {
+  margin-left:auto; 
+  margin-right:auto;
 }

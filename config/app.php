@@ -177,10 +177,12 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
+        //Intervention\Image\ImageServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
         //Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        //Dwij\Laraadmin\LAProvider::class
+        //TCG\Voyager\VoyagerServiceProvider::class,
         //a bombar
     ],
 

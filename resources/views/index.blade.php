@@ -123,7 +123,7 @@
                                 <li><strong>2</strong> Domains</li>
                                 <li><strong>50</strong> Email Accounts</li>
                                 <li><strong>2</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
 
@@ -136,7 +136,7 @@
                                 <li><strong>10</strong> Domains</li>
                                 <li><strong>100</strong> Email Accounts</li>
                                 <li><strong>Unlimited</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
 
@@ -149,7 +149,7 @@
                                 <li><strong>Unlimited</strong> Domains</li>
                                 <li><strong>Unlimited</strong> Email Accounts</li>
                                 <li><strong>UNlimited</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -11,10 +11,6 @@
   </header>
 	<ul id="ulperfil">
     <?php
-    use App\Pessoa;
-    use App\Morada;
-    $pessoa = Pessoa::where(['user_id'=>Auth::user()->id])->first();
-    $morada = Morada::where(['id'=>($pessoa->morada_id)])->first();
     if (!empty ($pessoa->morada_id)) {
       echo "<li tabindex='0' class='icon-dashboard'><span><a class='try_ajax' href='/home/".Auth::user()->username."/addMorada'>Alterar Morada</a></span></li>";
     }else{
@@ -33,6 +29,8 @@
     <li tabindex="0" class="icon-settings"><span><a class="try_ajax" href="/home/{{Auth::user()->username}}/altPassword">Alterar Password</a></span></li>
   </ul>
 </nav>
+
+<!-- @yield('content2') -->
 
 <div class="contenttest"></div>
 

@@ -21,7 +21,7 @@ class AdminMiddleware
             {
                 return $next($request); // pass the admin
             }else{
-                return redirect('/home')->withError('Permission Denied'); // not admin.
+                return redirect('/home')->with('status', 'Não tem permissões de Administrador'); // not admin.
             }
         }else{
             return redirect('/login')->withError('Unauthorized.', 401);//not loggin in

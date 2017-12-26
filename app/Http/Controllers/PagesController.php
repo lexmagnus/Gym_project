@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Session;
 
 class PagesController extends Controller
 {
@@ -15,5 +16,10 @@ class PagesController extends Controller
             return view('index');
         }
         
+    }
+
+    public function inscricao(){
+        Session::flash('status', 'Crie um registo.');
+        return redirect('/#regist');
     }
 }

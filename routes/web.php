@@ -38,8 +38,28 @@ Route::post(
     '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
 );
 
-//Route::get('/', 'HomeController@index');
+
+
+
 Route::get('/', 'PagesController@index');
+Route::get('/home', 'HomeController@index');
+Route::get('/home/{username}', 'PerfilController@index');
+Route::get('/home/{username}/perfil', 'PerfilController@perfil');
+Route::get('/home/{username}/edit', 'PerfilController@show_edit');
+Route::get('/home/{username}/addMorada', 'MoradaController@index');
+Route::get('/home/{username}/altEmail', 'PerfilController@email');
+Route::get('/home/{username}/altPassword', 'PerfilController@pass');
+Route::post('/home/{username}/altPassword', 'PerfilController@edit_pass');
+Route::post('/home/{username}/altEmail', 'PerfilController@edit_email');
+Route::post('/home/{username}/addMorada', 'MoradaController@add');
+Route::post('/home/{username}/edit', 'PerfilController@edit');
+Route::post('/home/{username}', 'PerfilController@update_avatar');
+
+
+
+
+//Route::get('/', 'HomeController@index');
+/*Route::get('/', 'PagesController@index');
 Route::get('/home', 'HomeController@index');
 Route::group(['prefix' => '/home/{username}'], function(){
 
@@ -54,7 +74,7 @@ Route::group(['prefix' => '/home/{username}'], function(){
     Route::post('/altEmail', 'PerfilController@edit_email');
     Route::post('/addMorada', 'MoradaController@add');
     Route::post('/edit', 'PerfilController@edit');
-});
+});*/
 
 Route::get('services', 'ServicesController@services');
 Route::get('services', 'EventController@index');
@@ -90,12 +110,12 @@ Route::get('/pagamentos', 'PagamentosController@pagamentos');
     return view('admin.admin');
 }]);*/
 Route::group(['middleware' => 'admin'], function () {
-    Route::get('/admin/', 'AdminController@admin');
+    Route::get('/admin', 'AdminController@clientes');
     //another routes...
 });
 
 Route::group(['middleware' => 'instruct'], function () {
-    Route::get('/aulas/', 'InstrutorController@index');
+    Route::get('/aulas', 'InstrutorController@index');
     //another routes...
 });
 
