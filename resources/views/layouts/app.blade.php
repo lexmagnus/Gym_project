@@ -101,7 +101,11 @@
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">
 				
+				@if (Auth::user()->isAdmin())
+				Administrador
+				@else
 				{{ Auth::user()->username }}
+				@endif
 				</a>
 				<div class="dropdown-content">
 					<a onclick="load_main_content()" href="/home/{{Auth::user()->username}}" id="jtest" name="/home/{{Auth::user()->username}}/perfil">Ver Perfil</a>
@@ -116,10 +120,18 @@
 					</form>
 				</div>
 			</li>
-			<li class="liteste"><a href="/pt">Contate o PT</a></li>
-			<li class="liteste"><a href="/plan">Pacotes</a></li>
-			<li class="liteste"><a href="/services">Serviços</a></li>
-			<li class="liteste"><a href="/home">Home</a></li>
+			@if (Auth::user()->isAdmin())
+				<li class="liteste"><a href="/pt">Contate o PT</a></li>
+				<li class="liteste"><a href="/plan">Pacotes</a></li>
+				<li class="liteste"><a href="/services">Serviços</a></li>
+				<li class="liteste"><a href="/admin">Admin</a></li>
+				<li class="liteste"><a href="/home">Home</a></li>
+			@else
+				<li class="liteste"><a href="/pt">Contate o PT</a></li>
+				<li class="liteste"><a href="/plan">Pacotes</a></li>
+				<li class="liteste"><a href="/services">Serviços</a></li>
+				<li class="liteste"><a href="/home">Home</a></li>
+			@endif
 		  </ul>
 		  @endif
 
