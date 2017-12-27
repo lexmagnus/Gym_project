@@ -31,16 +31,30 @@
             </div>
             <section id="slide1">
                 <div id="home">
-                <img src="images\wallpapers\homepromocao.jpg" alt="homeimage" height="100%" width="100%">
+                <img id="galeria" src="" alt="">
+                <script type="text/javascript">
+                    var primeira = 0
+                    const fgaleria = ['images/wallpapers/homepromocao.jpg', 'images/wallpapers/freetrial.jpg']
+    
+                function mudar() {
+                    let mudanca = ( primeira == fgaleria.length-1 ) ? 0 : primeira+1
+                    document.getElementById('galeria').src = fgaleria[mudanca]
+                    primeira = mudanca
+                }
+
+                window.onload = function () {
+                    if (fgaleria.length) {
+                        document.getElementById('galeria').src = fgaleria[primeira]
+                        setInterval(mudar, 4000)
+                }
+                }
+
+</script>
                 </div>
             </section>
             <section id="slide2">
                 <div id="serv">
-                    <div class="servcontainer">
-                        <div class="servcontent">
                             <h2>Serviços disponiveis no ginásio</h2>
-                        </div>
-                    </div>
                 </div>
 
                 <script>
@@ -66,18 +80,7 @@
                     </script>
             </section>
             <section id="slide3">
-                <div id="free">
-                    <div class="freecontainer">
-                        <div class="freecontent">
-                            <img src="images\wallpapers\freetrial.jpg" alt="freeimage" height="100%" width="100%">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="slide4">
                 <div id="about">
-                    <div class="aboutcontainer">
-                        <div class="aboutcontent">
                             <h2>Sobre o nosso ginásio</h2>
                             <h3>Venha visitar-nos: </h3>
                             <div id="googleMap" style="width:100%; height:600px; margin: 20px 0 auto;position: relative; z-index: -1;"></div>
@@ -105,14 +108,10 @@
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFivJePR3xH39kBRZ3X8W-H7PjaiftQNo&callback=myMap"></script>
                                 
                             </div>
-                        </div>
-                    </div>
                 </div>
             </section>
-            <section id="slide5">
+            <section id="slide4">
                 <div id="pricing_table">
-                    <div class="aboutcontainer">
-                        <div class="aboutcontent">
                             <h2>Pricing Tables</h2>
                             <div class="col-pricing">
                                 <ul class="price-box">
@@ -152,15 +151,11 @@
                                 <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
                 </div>
                 
             </section>
-            <section id="slide6">
+            <section id="slide5">
                 <div id="regist">
-                    <div class="registcontainer">
-                        <div class="registcontent">
                             <h2>Registo</h2>
                             <div class="loginbox">
                             <form role="form" method="POST" action="{{ url('/register') }}">
@@ -220,8 +215,6 @@
 
                             </form>
                             </div>
-                        </div>
-                    </div>
                 </div>
             </section>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

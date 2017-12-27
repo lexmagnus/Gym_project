@@ -80,7 +80,6 @@
 			<li class="liteste"><a href="#regist">Inscrição</a></li>
 			<li class="liteste"><a href="#pricing_table">Preços</a></li>
 			<li class="liteste"><a href="#about">Sobre</a></li>
-            <li class="liteste"><a href="#free">Free-Trial</a></li>
 			<li class="liteste"><a href="#serv">Serviços</a></li>
 			<li class="liteste"><a href="#home">Home</a></li>
 			
@@ -91,7 +90,6 @@
     	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
     	<li class="liteste2"><a href="#home">Home</a></li>
 		<li class="liteste2"><a href="#serv">Serviços</a></li>
-		<li class="liteste2"><a href="#free">Free-Trial</a></li>
 		<li class="liteste2"><a href="#about">Sobre</a></li>
 	  </div>
 

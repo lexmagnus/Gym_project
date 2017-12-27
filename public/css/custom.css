@@ -21,19 +21,27 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   border-width: 1px;
   /*height: 500px;*/
   width: 80%;
-  height: 100vh;
-  padding: 10px; }
+  min-height: 100vh;
+  padding-top: 100px;
+  /*padding-bottom: 100px; */}
   
   h2 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  /*================================ galeria ================================= */
+  #galeria {
+    width: 100%;
+    min-height: 500px; }
+
+  /* =============================== END GALERIA =============================*/ 
   /*================================ pricing tables ============================*/
 .col-pricing {
   float: left;
   width: 33.3%;
-  height: 80%;
+  height: 50%;
   padding: 8px;
   box-sizing: border-box;
 }
@@ -129,10 +137,10 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   font-size: 36px;
   margin-left: 0px; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .ulteste {
     display: none; } }
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .open-slide {
     display: none; } }
 /* -----------------*/
@@ -235,9 +243,8 @@ input[type=password] {
   /*=================== FOOTER ===================*/ 
   footer {
     background: #466170;
-    height: 16vh;
+    min-height: 100%;
     width: 100%;
-    bottom: 0;
     left: 0;
     z-index: 900;
     outline: none;
@@ -246,14 +253,16 @@ input[type=password] {
     border-color: #e8491d;
     background-color: #35424a;
     text-align: center;
-    margin-bottom: 0px;
-    margin-top: 300px;
+   /* margin-bottom: 0px;
+    margin-top: 300px;*/
+    padding-top:20px;
+    padding-bottom:40px;
   }
   /*====================fim FOOTER =================*/
 /*=================== CAIXA DE LOGIN =====================*/
 #lbutton {
   font-size: 14px;
-  background-color: #0d5c8a;
+  background-color: #35424a;
   color: white;
   padding: 14px;
   margin: 10px;
@@ -263,6 +272,7 @@ input[type=password] {
   width: 70%; }
 
 #lbutton:hover {
+  /*padding-bottom: 22px;*/
   background-color: #e8491d; }
 
 #login {
@@ -480,8 +490,8 @@ ul:not(#ulperfil) {
   border-bottom: #35424a 3px solid;
   background-color: #798085; }
 
-.liteste a:hover {
-  padding-bottom: 22px;
+.liteste a:hover, li>a:focus, li.active{
+  /*padding-bottom: 22px;*/
   background-color: #e8491d; }
 
 .dropdown:hover .dropbtn {
@@ -820,8 +830,7 @@ table.clienttab {
 a.abutton {
   -webkit-appearance: button;
   -moz-appearance: button;
-  appearance: button;
-
+  /*appearance: button;*/
   text-decoration: none;
   color: initial;
 }
