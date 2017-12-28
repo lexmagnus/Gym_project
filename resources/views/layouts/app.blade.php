@@ -25,7 +25,7 @@
 <header class="header">
       <div class="container">
         <div id="branding">
-          <h1><span class="highlight">Madeira</span> Gym</h1>
+		<a href="../"><h1><span class="highlight">Madeira</span> Gym</h1></a>
 		</div>
 
 		@if (Auth::guest())
@@ -77,9 +77,9 @@
 					
 				</form>
 			</li>
-			<li class="liteste"><a href="#regist">Inscrição</a></li>
-			<li class="liteste"><a href="#pricing_table">Preços</a></li>
+			<li class="liteste"><a href="/register">Inscrição</a></li>
 			<li class="liteste"><a href="#about">Sobre</a></li>
+			<li class="liteste"><a href="#pricing_table">Preços</a></li>
 			<li class="liteste"><a href="#serv">Serviços</a></li>
 			<li class="liteste"><a href="#home">Home</a></li>
 			
@@ -90,7 +90,10 @@
     	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
     	<li class="liteste2"><a href="#home">Home</a></li>
 		<li class="liteste2"><a href="#serv">Serviços</a></li>
+		<li class="liteste2"><a href="#pricing_table">Preços</a></li>
 		<li class="liteste2"><a href="#about">Sobre</a></li>
+		<li class="liteste2"><a href="#regist">Inscrição</a></li>
+		<li class="liteste2"><a href="/login">Login</a></li>
 	  </div>
 
 		@else

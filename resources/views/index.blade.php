@@ -80,10 +80,51 @@
                     </script>
             </section>
             <section id="slide3">
+                <div id="pricing_table">
+                            <div class="col-pricing">
+                                <ul class="price-box">
+                                <li class="header-pricing">Simple</li>
+                                <li class="emph"><strong>€ 39.90</strong> / Mês</li>
+                                <li><strong>10</strong> Sessões com PT</li>
+                                <li><strong>10GB</strong> Data Transfer</li>
+                                <li><strong>2</strong> Domains</li>
+                                <li><strong>50</strong> Email Accounts</li>
+                                <li><strong>2</strong> FTP Accounts</li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-pricing">
+                                <ul class="price-box best">
+                                <li class="header-pricing header-orange">Standard</li>
+                                <li class="emph"><strong>€ 59.90</strong> / Mês</li>
+                                <li><strong>75GB</strong> Disk Space</li>
+                                <li><strong>50GB</strong> Data Transfer</li>
+                                <li><strong>10</strong> Domains</li>
+                                <li><strong>100</strong> Email Accounts</li>
+                                <li><strong>Unlimited</strong> FTP Accounts</li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-pricing">
+                                <ul class="price-box">
+                                <li class="header-pricing">Advanced</li>
+                                <li class="emph"><strong>€ 99.90</strong> / Mês</li>
+                                <li><strong>120GB</strong> Disk Space</li>
+                                <li><strong>100GB</strong> Data Transfer</li>
+                                <li><strong>Unlimited</strong> Domains</li>
+                                <li><strong>Unlimited</strong> Email Accounts</li>
+                                <li><strong>UNlimited</strong> FTP Accounts</li>
+                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                </ul>
+                            </div>
+                </div>
+                
+            </section>
+            <section id="slide4">
                 <div id="about">
-                            <h2>Sobre o nosso ginásio</h2>
-                            <h3>Venha visitar-nos: </h3>
-                            <div id="googleMap" style="width:100%; height:600px; margin: 20px 0 auto;position: relative; z-index: -1;"></div>
+                            <div id="googleMap" style="width:80%; height:600px; margin: 0 auto;position: relative; z-index: -1;"></div>
                                 
                                 <script>
                                 function myMap() {
@@ -110,51 +151,8 @@
                             </div>
                 </div>
             </section>
-            <section id="slide4">
-                <div id="pricing_table">
-                            <h2>Pricing Tables</h2>
-                            <div class="col-pricing">
-                                <ul class="price-box">
-                                <li class="header-pricing">Simple</li>
-                                <li class="emph"><strong>$ 5.99</strong> / Month</li>
-                                <li><strong>20GB</strong> Disk Space</li>
-                                <li><strong>10GB</strong> Data Transfer</li>
-                                <li><strong>2</strong> Domains</li>
-                                <li><strong>50</strong> Email Accounts</li>
-                                <li><strong>2</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="col-pricing">
-                                <ul class="price-box best">
-                                <li class="header-pricing header-orange">Standard</li>
-                                <li class="emph"><strong>$ 15.99</strong> / Month</li>
-                                <li><strong>75GB</strong> Disk Space</li>
-                                <li><strong>50GB</strong> Data Transfer</li>
-                                <li><strong>10</strong> Domains</li>
-                                <li><strong>100</strong> Email Accounts</li>
-                                <li><strong>Unlimited</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="col-pricing">
-                                <ul class="price-box">
-                                <li class="header-pricing">Advanced</li>
-                                <li class="emph"><strong>$ 25.99</strong> / Month</li>
-                                <li><strong>120GB</strong> Disk Space</li>
-                                <li><strong>100GB</strong> Data Transfer</li>
-                                <li><strong>Unlimited</strong> Domains</li>
-                                <li><strong>Unlimited</strong> Email Accounts</li>
-                                <li><strong>UNlimited</strong> FTP Accounts</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
-                                </ul>
-                            </div>
-                </div>
-                
-            </section>
-            <section id="slide5">
+            
+            <!--<section id="slide5">
                 <div id="regist">
                             <h2>Registo</h2>
                             <div class="loginbox">
@@ -216,7 +214,7 @@
                             </form>
                             </div>
                 </div>
-            </section>
+            </section>-->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
             <script>
         $(function() {

@@ -13,18 +13,32 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 #pricing_table,
 #regist,#home {
   display: block;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   /*ver bem isto*/
   margin: auto;
   border-style: solid;
   border-width: 1px;
   /*height: 500px;*/
-  width: 80%;
+  width: 100%;
   min-height: 100vh;
   padding-top: 100px;
   /*padding-bottom: 100px; */}
-  
+  /* CORES DE BACKGROUND */
+  #home {
+    background-color: white;
+  }
+  #serv {
+    background-color: #007F8F;
+  }
+  #pricing_table {
+    background-color: #35424a7c;
+  }
+  #about
+  {
+    
+  }
+  /* FIM CORES DE BACKGROUND */
   h2 {
     text-align: center;
     padding-top: 20px;
@@ -34,7 +48,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   /*================================ galeria ================================= */
   #galeria {
     width: 100%;
-    min-height: 500px; }
+    /*min-height: 300px;*/ }
 
   /* =============================== END GALERIA =============================*/ 
   /*================================ pricing tables ============================*/
@@ -151,7 +165,8 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   padding: 0; }
 
 h1 {
-  margin-left: 20px; }
+  margin-left: 20px;
+  color: #e8491d; }
 
 /*corpo do website */
 body {
@@ -183,7 +198,7 @@ header {
   padding-top: 30px;
   min-height: 70px;
   border-bottom: #e8491d 3px solid;
-  margin-bottom: 20px; }
+  margin-bottom: 0px; }
 
 header a {
   color: #ffffff;
