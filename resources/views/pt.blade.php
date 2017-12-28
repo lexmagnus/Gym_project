@@ -1,13 +1,13 @@
-@extends('layouts.appOLD(NOT_USE)')
+@extends('layouts.app')
 
 @section('content')
 
     <section>
-        <h1>What others say:</h1>
-    
+        <h1>Chat:</h1>
+        
         @foreach($posts as $post)
             <article data-postid="{{ $post->id }}">
-                <p>{{ $post->user->name }} {{ $post->created_at }}</p>
+                <p>{{ $post->user->username }} {{ $post->created_at }}</p>
 
                 <p>{{ $post->body }}</p>
             </article>

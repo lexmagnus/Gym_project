@@ -103,7 +103,6 @@ Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDon
 //Route::post('/register', 'PessoaController@add');
 
 Route::get('/dadosPessoais', 'DadospessoaisController@dadosP');
-Route::get('/pt', 'PTController@pT');
 Route::get('/pagamentos', 'PagamentosController@pagamentos');
 
 /*Route::get('/admin/', ['middleware' => 'admin', function () {  
