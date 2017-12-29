@@ -7,14 +7,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
-
-    <style>
-        /* ... */
-    </style>
 </head>
- 
-    <div style="max-width: 650px; margin:20px; position: absolute; z-index: -1;">
-        {!! $calendar->calendar() !!}
-        {!! $calendar->script() !!}
-    </div>
+ <div class="services-body">
+    {!! $calendar->calendar() !!}
+    {!! $calendar->script() !!}
+</div>
 @endsection
