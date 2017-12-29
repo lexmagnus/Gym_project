@@ -984,11 +984,12 @@ ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
 }
-/* CHAT */
 
+/*========================== CHAT ========================*/
 .pt-body {
+  
   padding: 20px;
-  width: 100%;
+  min-width: 100%;
   background-color: #fff;
 }
 
@@ -1114,10 +1115,25 @@ input.textarea {
 }
 
 
-/* Services */
+/*========================== SERVICES ========================*/
 
 .services-body {
-  max-width: 650px;
+  padding: 20px;
+  width: 100%;
   margin: 20px;
-
 }
+ #left {
+   padding: 20px;
+   background-color: #ffffff;
+   width: 650px;
+   float: left;
+ }
+
+ #right {
+   padding: 20px;
+   margin-left: 700px;
+ }
+
+ .clear {
+   clear: both;
+ }
