@@ -1,42 +1,79 @@
 @extends('layouts.appadmin')
 
 @section('AdminContent')
-    <h2>Clientes</h2>
+
+<div class="container_admin">
+    <ul class="breadcrumb">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li>Clientes</li>
+    </ul>
+    <h1>Clientes<small>Administrator</small></h1>
     <div class="adminbox">
-        <input type="text" name="search" id="search">
-        <button type="submit">Procurar</button>
-        <button type="submit">Adicionar Cliente</button>
+        <input type="text" class="pesquisa" name="search" id="search">
+        <button type="submit" id="lbuttonadmin">Procurar</button>
+        <button type="submit" id="lbuttonadmin">Adicionar Cliente</button>
         <br><hr><br>
     <table class="faturas">
+        <thead>
             <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Nome</th>
-                <th>Contacto</th>
-                <th>Opções</th>
+                <th style="text-align: center;">ID</th>
+                <th style="text-align: center;">Username</th>
+                <th style="text-align: center;">Email</th>
+                <th style="text-align: center;">Nome</th>
+                <th style="text-align: center;">Contacto</th>
+                <th style="text-align: center;">Opções</th>
             </tr>
+        </thead>
+        <tbody>
         @foreach($pessoa as $client)
         <tr>
-            <td>{{$client->id}}</td>
-            <td>{{$client->username}}</td>
-            <td>{{$client->email}}</td>
-            <td>{{$client->name}}</td>
-            <td>{{$client->contacto}}</td>
+            <td style="text-align: center;">{{$client->id}}</td>
+            <td style="text-align: center;">{{$client->username}}</td>
+            <td style="text-align: center;">{{$client->email}}</td>
+            <td style="text-align: center;">{{$client->name}}</td>
+            <td style="text-align: center;">{{$client->contacto}}</td>
 
 
 
-            <td>
-                <form action="{{ route('deletecliente', $client->id) }}" class="button">
+            <td style="text-align: center;">
+
+            <a class="face-button" href="{{ route('deletecliente', $client->id) }}">
+
+                <div class="face-primary">
+                    Editar
+                </div>
+
+                <div class="face-secondary">
+                    {{$client->username}}
+                </div>
+            </a>
+
+            <a class="face-button" href="{{ route('deletecliente', $client->id) }}">
+
+                <div class="face-primary">
+                    <span class="icon fa fa-cloud"></span>
+                    Apagar
+                </div>
+
+                <div class="face-secondary">
+                    <span class="icon fa fa-hdd-o"></span>
+                    {{$client->username}}
+                </div>
+            </a>
+
+<!--                 <form action="{{ route('deletecliente', $client->id) }}" class="button">
                     <input type="submit" value="Editar" />
                 </form>
                 <form action="{{ route('deletecliente', $client->id) }}" class="button">
                     <input type="submit" value="Eliminar" />
-                </form>
+                </form> -->
             </td>
         </tr>
         @endforeach
+        </tbody>
     </table>
+</div>
 </div>
 
 <script>

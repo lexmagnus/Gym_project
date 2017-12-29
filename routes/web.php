@@ -109,7 +109,8 @@ Route::get('/pagamentos', 'PagamentosController@pagamentos');
     return view('admin.admin');
 }]);*/
 Route::group(['middleware' => 'admin'], function () {
-    Route::get('/admin', 'AdminController@clientes')->name('admin');
+    Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
+    Route::get('/admin/clientes', 'AdminController@clientes')->name('admin');
     Route::get('/admin/delete_{id}', 'AdminController@deleteCliente')->name('deletecliente');
     //another routes...
 });
