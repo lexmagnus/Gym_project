@@ -257,6 +257,7 @@ input[type=password] {
 
   /*=================== FOOTER ===================*/ 
   footer {
+    color: #ffffff;
     background: #466170;
     min-height: 100%;
     width: 100%;
@@ -848,4 +849,136 @@ a.abutton {
   /*appearance: button;*/
   text-decoration: none;
   color: initial;
+}
+
+/* CHAT */ 
+.pt-body{
+  padding:20px;
+  width:100%;
+  background-color: #fff;
+}
+
+.container-chat-img{
+ width: 100%;
+  
+}
+.container-chat {  
+  width: 50%;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px 10px 10px 0;
+  margin: 10px 0 10px 120px;
+}
+
+.container-chat p {
+  color: #35424a;
+  text-align: left;
+  padding: 10px;
+  text-indent: 25px;
+}
+
+#nome{
+  text-transform: uppercase;
+  color:#e8491d;
+  margin: 0px 0px 0px 10px;
+}
+
+
+/* Darker chat container */
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+
+/* Clear floats */
+
+.container-chat::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* Style images */
+
+.img-chat {
+  margin: 20px 0 0 50px;
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+/* Style the right image */
+
+.img-chat.right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+
+/* Style time text */
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+
+/* Style time text */
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+/* Text area*/
+input.textarea {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 50px;
+  z-index: 99;
+  background:#35424a;
+  border-color: #ccc;
+  outline: none;
+  color: #fff;
+  font-weight: 400;
+  border-radius: 5px;
+  margin: 0%;
+}
+
+#send-btn{
+  cursor: pointer;
+  background-color: #e8491d;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  float: right;
+  border-radius: 5px;
+  margin:10px 0 10px 10px;
+}
+
+.message{
+  padding: 0;
+  width: 51%;
+  z-index: 99;
+  margin-left:120px;
+  margin-bottom:50px;
+}
+
+/* Services */
+.services-body{
+  max-width: 650px; 
+  margin:20px;
 }
