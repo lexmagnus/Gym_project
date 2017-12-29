@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->integer('room')->nullable();
             $table->DateTime('start_date');
             $table->DateTime('end_date');
-            $table->string('color');
+            $table->enum('color',['Red','Green','Blue','Grey','Orange']);
             $table->timestamps();
         });
     }

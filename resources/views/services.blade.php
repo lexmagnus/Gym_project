@@ -9,14 +9,7 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
     </head>
-    $table->increments('id');
-            $table->string('title');
-            $table->integer('room')->nullable();
-            $table->DateTime('start_date');
-            $table->DateTime('end_date');
-            $table->string('color');
-            $table->timestamps();
-
+   
     <div id="services">
         <div id="left">
             {!! $calendar->calendar() !!}
@@ -28,10 +21,10 @@
 
                     {{ csrf_field() }}
 
-                    <label><b>Nome da aula</b></label>
-                    <input type="text" placeholder="Nome aula" id="nome aula" class="form-control" name="nome aula" value="{{ old('rua') }}" required autofocus>
+                    <label><b>Class name</b></label>
+                    <input type="text" placeholder="Nome aula" id="title" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
 
-                    <label><b>Sala de Aula</b></label>
+                    <label><b>Classroom</b></label>
                     <input type="text" placeholder="Sala de aula" id="room" type="room" class="form-control" name="room" value="{{ old('room') }}" required autofocus>
                     @if ($errors->has('room'))
                         <span>
@@ -39,28 +32,34 @@
                         <br>
                         </span>
                     @endif
-                    <label><b>Hora de início</b></label>
-                    <input type="DateTime" placeholder="Hora de início" id="start_date" type="start_date" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
+                    <label><b>Starts at</b></label>
+                    <input type="DateTime" placeholder="Ano-mês-diaTh:m" id="start_date" type="start_date" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
+                    <br>
                     @if ($errors->has('start_date'))
                         <span>
                         <strong>{{ $errors->first('start_date') }}</strong>
                         <br>
                         </span>
                     @endif
-                    <label><b>Hora de fim</b></label>
-                    <input type="DateTime" placeholder="Hora de fim" id="end_date" type="end_date" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
+                    <label><b>Ends at</b></label>
+                    <input type="Datetime" placeholder="Ano-mês-diaTh:m" id="end_date" type="end_date" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
+                    <br>
                     @if ($errors->has('end_date'))
                         <span>
                         <strong>{{ $errors->first('end_date') }}</strong>
                         <br>
                         </span>
                     @endif
-
-                    @if (empty($pessoa->morada_id))
-                        <button type="submit" id="lbutton">Adicionar Morada</button>
-                    @else
-                        <button type="submit" id="lbutton">Alterar Morada</button>
+                     <label><b>Color </b></label>
+                    <input type="enum" placeholder="Red, Green, Blue, Grey, Orange" id="color" type="color" class="form-control" name="color" value="{{ old('color') }}" required autofocus>
+                    <br>
+                    @if ($errors->has('color'))
+                        <span>
+                        <strong>{{ $errors->first('color') }}</strong>
+                        <br>
+                        </span>
                     @endif
+                    <button type="submit" id="lbutton">Save</button>
 
                 </form>
             </div>
