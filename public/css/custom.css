@@ -626,11 +626,12 @@ main .helper span {
   height: 84vh;
   width: 18%;
   position: fixed;
+  z-index: 900;
   bottom: 0;
   left: 0;
   float:left;
   outline: none;
-  border-bottom: #e8491d 3px solid;
+  border-bottom: #e8491d px solid;
  }
 
 /*
@@ -918,9 +919,9 @@ a.abutton {
 
 .container_admin{
   float: right;
-  width: 82%;
+  width: 80%;
   height: 100%;
-  border: 1px solid #555;
+  border: 3px solid rgb(40, 17, 167);
 
 }
 
