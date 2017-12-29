@@ -916,7 +916,6 @@ a.abutton {
   color: initial;
 }
 
-<<<<<<< HEAD
 .container_admin{
   float: right;
   width: 82%;
@@ -984,19 +983,20 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
-=======
-/* CHAT */ 
-.pt-body{
-  padding:20px;
-  width:100%;
+}
+/* CHAT */
+
+.pt-body {
+  padding: 20px;
+  width: 100%;
   background-color: #fff;
 }
 
-.container-chat-img{
- width: 100%;
-  
+.container-chat-img {
+  width: 100%;
 }
-.container-chat {  
+
+.container-chat {
   width: 50%;
   border: 2px solid #dedede;
   background-color: #f1f1f1;
@@ -1012,9 +1012,9 @@ ul.breadcrumb li a:hover {
   text-indent: 25px;
 }
 
-#nome{
+#nome {
   text-transform: uppercase;
-  color:#e8491d;
+  color: #e8491d;
   margin: 0px 0px 0px 10px;
 }
 
@@ -1071,7 +1071,9 @@ ul.breadcrumb li a:hover {
   color: #999;
 }
 
+
 /* Text area*/
+
 input.textarea {
   position: relative;
   bottom: 0px;
@@ -1080,7 +1082,7 @@ input.textarea {
   width: 100%;
   height: 50px;
   z-index: 99;
-  background:#35424a;
+  background: #35424a;
   border-color: #ccc;
   outline: none;
   color: #fff;
@@ -1089,7 +1091,7 @@ input.textarea {
   margin: 0%;
 }
 
-#send-btn{
+#send-btn {
   cursor: pointer;
   background-color: #e8491d;
   border: none;
@@ -1100,20 +1102,22 @@ input.textarea {
   font-size: 18px;
   float: right;
   border-radius: 5px;
-  margin:10px 0 10px 10px;
+  margin: 10px 0 10px 10px;
 }
 
-.message{
+.message {
   padding: 0;
   width: 51%;
   z-index: 99;
-  margin-left:120px;
-  margin-bottom:50px;
+  margin-left: 120px;
+  margin-bottom: 50px;
 }
 
+
 /* Services */
-.services-body{
-  max-width: 650px; 
-  margin:20px;
->>>>>>> fbf0529c6d4687fd77249fc78d6b84e059ca9b2c
+
+.services-body {
+  max-width: 650px;
+  margin: 20px;
+
 }
