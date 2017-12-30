@@ -54,7 +54,18 @@
             </section>
             <section id="slide2">
                 <div id="serv">
-                            <h2>Serviços disponiveis no ginásio</h2>
+                            <div id="col_servico">
+                            <div id="topserv"><img id="first" src="images/wallpapers/first.png" alt="primeira"></div>
+                            <div id="bottomserv"><p><br>Se pretende fazer um breve aquecimento ou um treino cardiovascular, disponibilizamos o melhor equipamento de cardio, com aparelhos de marcas líderes a nivel mundial, como a STAR TRAC. O espaço é composto por passadeiras, elipticas, bicicletas e máquinas de remo. Todas as máquinas são de simples e fácil utilização.</p></div>
+                            </div>
+                            <div id="col_servico">
+                            <div id="topserv"><img id="second" src="images/wallpapers/second.png" alt="segunda"></div>
+                            <div id="bottomserv"><p><br>Para exercícios de força, a nossa área de pesos livres possui uma vasta gama de halteres, barras, bancos, tranversais a cabo e vários tipos de cordas e cabos.</p></div>
+                            </div>
+                            <div id="col_servico">
+                            <div id="topserv"><img id="last" src="images/wallpapers/last.png" alt="ultima"></div>
+                            <div id="bottomserv"><p><br>As nossas máquinas de força são de fácil utilização e adequam-se a todos os níveis de aptidão física, permitindo trabalhar todos os músculos do corpo. Para efetuar abdominais e alongamentos, existe uma área própria para o efeito equipada com confortáveis colchões, bolas de pilates e aparelhos para exercícios de equilibrio.</p></div>
+                            </div>
                 </div>
 
                 <script>
