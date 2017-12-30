@@ -111,6 +111,7 @@ Route::get('/pagamentos', 'PagamentosController@pagamentos');
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
     Route::get('/admin/clientes', 'AdminController@clientes')->name('admin');
+    Route::get('/admin/clientes/find_client', 'AdminController@find_client')->name('find_client');
     Route::get('/admin/delete_{id}', 'AdminController@deleteCliente')->name('deletecliente');
     //another routes...
 });

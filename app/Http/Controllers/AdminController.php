@@ -44,6 +44,31 @@ class AdminController extends Controller
             return view('admin.clientes',compact('pessoa'));
     }
 
+    public function find_client(Request $request)
+    {
+        //dd($request->type);
+        //return all clients
+        if(($request->type) == "name"){
+            $pessoa = DB::table('pessoas')
+                ->join('users', 'users.id', '=', 'pessoas.user_id')
+                ->join('clientes', 'pessoas.id', '=', 'clientes.pessoa_id')
+                ->select('users.*', 'pessoas.name', 'pessoas.contacto')
+                ->where("pessoas.".$request->type, '=', $request->search)
+                ->get();
+
+        }else{
+            $pessoa = DB::table('pessoas')
+                ->join('users', 'users.id', '=', 'pessoas.user_id')
+                ->join('clientes', 'pessoas.id', '=', 'clientes.pessoa_id')
+                ->select('users.*', 'pessoas.name', 'pessoas.contacto')
+                ->where("users.".$request->type, '=', $request->search)
+                ->get();
+        }            
+            //dd($pessoa);
+            return view('admin.client',compact('pessoa'));
+    }
+
+
     public function deleteCliente(Request $request) {
         User::find ( $request->id )->delete ();
         return redirect('/admin');
