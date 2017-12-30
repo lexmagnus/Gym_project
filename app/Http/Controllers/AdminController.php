@@ -38,7 +38,7 @@ class AdminController extends Controller
             ->join('users', 'users.id', '=', 'pessoas.user_id')
             ->join('clientes', 'pessoas.id', '=', 'clientes.pessoa_id')
             ->select('users.*', 'pessoas.name', 'pessoas.contacto')
-            ->get();
+            ->paginate(4);
             
             //dd($pessoa);
             return view('admin.clientes',compact('pessoa'));
