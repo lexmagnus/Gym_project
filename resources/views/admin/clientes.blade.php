@@ -11,19 +11,18 @@
     <h1>Clientes<small>Administrator</small></h1>
     <div class="adminbox">
         <div class="admin_input">
-            <form id="try" action="/admin/clientes/find_client" onsubmit="return AjaxRequest();" method="GET">
+            <form id="try" action="/admin/clientes/find_client" method="GET">
                 <input type="text" class="pesquisa" name="search" id="search">
                 <select name="type" id="type">
                     <option value="username">Username</option>
                     <option value="email">Email</option>
                     <option value="name">Nome</option>
                 </select>
-                <button class="try_ajax" id="lbuttonadmin">Procurar</button>
+                <button class="try_ajax" onclick="return AjaxRequest();" id="lbuttonadmin">Procurar</button>
             </form>
-            <button onclick="document.getElementById('id01').style.display='block'" id="lbuttonadmin" style="width:auto;">Adicionar Cliente</button>
+            <button class="inlineform" onclick="document.getElementById('id01').style.display='block'" id="lbuttonadmin" style="width:auto;">Adicionar Cliente</button>
             <!--<button type="submit" id="lbuttonadmin">Adicionar Cliente</button>
             <a href="/admin/clientes/find_client" class="abutton">Adicionar Cliente</a>-->
-            <div id="success"></div>
         </div>
         <br><hr><br>
 
@@ -51,25 +50,25 @@
 
             <td style="text-align: center;">
 
-            <a class="face-button" href="{{ route('deletecliente', $client->id) }}">
+            <a class="face-button" onclick="document.getElementById('id02').style.display='block'">
 
                 <div class="face-primary">
                     Editar
                 </div>
 
                 <div class="face-secondary">
-                    {{$client->username}}
+                    Editar
                 </div>
             </a>
 
-            <a class="face-button" href="{{ route('deletecliente', $client->id) }}">
+            <a class="face-button" id="face-buttonid" href="{{ route('deletecliente', $client->id) }}">
 
                 <div class="face-primary">
                     Apagar
                 </div>
 
                 <div class="face-secondary">
-                    {{$client->username}}
+                    Apagar
                 </div>
             </a>
 
@@ -114,17 +113,50 @@
   </form>
 </div>
 
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/uploads/avatars/default.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="containerm">
+
+        <label><b>Nome</b></label>
+        <input type="text" placeholder="Nome" name="uname" class="input_modal" required>
+
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Username" name="uname" class="input_modal" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="psw" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="psw" required>
+            
+        <button id="lbutton" type="submit">Atualizar Dados do cliente</button>
+    </div>
+
+  
+  </form>
+</div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
 var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+    if (event.target == modal2){
+        modal2.style.display = "none";
     }
 }
 
@@ -157,7 +189,7 @@ function AjaxRequest(){
 
 }
 
-    $('.face-button').on('click', function() {
+    $('.face-buttonid').on('click', function() {
         var choice = confirm('Tem a certeza que quer eliminar este Cliente?');
         if(choice === true) {
 

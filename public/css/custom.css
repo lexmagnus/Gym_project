@@ -333,12 +333,12 @@ input[type=password] {
 }
 
 #lbuttonadmin{
-  font-size: 14px;
+  font-size: 12px;
   background-color: #35424a;
   color: white;
-  padding: 14px;
-  margin: 10px;
-  width: 20%;
+  padding: 10px;
+  margin: 5px;
+  width: 10%;
 }
 
 #lbuttonadmin:hover {
@@ -471,17 +471,23 @@ input[type=password] {
     -webkit-border-radius: 5px;
     border: #e8491d 3px solid; }
 
-    .admin_input{
+    .admin_input #try, .admin_input #lbuttonadmin{
+      /*position: relative;*/
       display: inline;
+      
     }
 
-    .adminbox .pesquisa{
-      width: 48%;
+    .admin_input .pesquisa{
+      
+      border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 30px;
+    line-height: 20px;
+    /*width: 200px;*/
+    vertical-align: middle;
+    padding: 5px 10px 5px 10px !important;
+      width: 53%;
       margin: 20px;
-    }
-
-    .pesquisa, #lbuttonadmin{
-      display: inline;
     }
 
 /*==========================BOXES  DE AVISO====================*/

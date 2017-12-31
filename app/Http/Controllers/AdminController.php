@@ -56,7 +56,7 @@ class AdminController extends Controller
                 ->join('clientes', 'pessoas.id', '=', 'clientes.pessoa_id')
                 ->select('users.*', 'pessoas.name', 'pessoas.contacto')
                 ->where("pessoas.".$request->type, '=', $request->search)
-                ->get();
+                ->paginate(4);
 
         }else{
             $pessoa = DB::table('pessoas')
@@ -64,7 +64,7 @@ class AdminController extends Controller
                 ->join('clientes', 'pessoas.id', '=', 'clientes.pessoa_id')
                 ->select('users.*', 'pessoas.name', 'pessoas.contacto')
                 ->where("users.".$request->type, '=', $request->search)
-                ->get();
+                ->paginate(4);
         }
             
         if($pessoa){
