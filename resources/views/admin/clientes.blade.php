@@ -157,7 +157,7 @@ function AjaxRequest(){
 
 }
 
-    $('form.button').on('click', function() {
+    $('.face-button').on('click', function() {
         var choice = confirm('Tem a certeza que quer eliminar este Cliente?');
         if(choice === true) {
 
