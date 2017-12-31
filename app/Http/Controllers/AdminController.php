@@ -43,11 +43,13 @@ class AdminController extends Controller
             //dd($pessoa);
             return view('admin.clientes',compact('pessoa'));
     }
-
-    public function find_client(Request $request)
-    {
-        //dd($request->type);
-        //return all clients
+    
+    public function find_client(Request $request){
+            
+        if($request->ajax()){
+            
+        $output="";
+            
         if(($request->type) == "name"){
             $pessoa = DB::table('pessoas')
                 ->join('users', 'users.id', '=', 'pessoas.user_id')
@@ -63,11 +65,47 @@ class AdminController extends Controller
                 ->select('users.*', 'pessoas.name', 'pessoas.contacto')
                 ->where("users.".$request->type, '=', $request->search)
                 ->get();
-        }            
-            //dd($pessoa);
-            return view('admin.client',compact('pessoa'));
-    }
+        }
+            
+        if($pessoa){
+                
+            foreach ($pessoa as $key => $pess) {
+                    
+                $output.="<tr>".
+                        "<td style='text-align: center;'>".$pess->id."</td>".
+                        "<td style='text-align: center;'>".$pess->username."</td>".
+                        "<td style='text-align: center;'>".$pess->email."</td>".
+                        "<td style='text-align: center;'>".$pess->name."</td>".
+                        "<td style='text-align: center;'>".$pess->contacto."</td>".
+                        "<td style='text-align: center;'>".
+                            "<a class='face-button' href='".route('deletecliente', $pess->id)."'>
 
+                                <div class='face-primary'>
+                                    Editar
+                                </div>
+
+                                <div class='face-secondary'>
+                                    ".$pess->username."
+                                </div>
+                            </a>
+
+                            <a class='face-button' href='".route('deletecliente', $pess->id)."'>
+
+                                <div class='face-primary'>
+                                    Apagar
+                                </div>
+                                <div class='face-secondary'>
+                                    ".$pess->username."
+                                </div>
+                            </a>
+                        </td>
+                        </tr>";
+                    }
+
+                    return Response($output);
+                }
+            }
+        }
 
     public function deleteCliente(Request $request) {
         User::find ( $request->id )->delete ();

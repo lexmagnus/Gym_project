@@ -11,18 +11,19 @@
     <h1>Clientes<small>Administrator</small></h1>
     <div class="adminbox">
         <div class="admin_input">
-            <form id="try" action="/admin/clientes/find_client" method="GET">
+            <form id="try" action="/admin/clientes/find_client" onsubmit="return AjaxRequest();" method="GET">
                 <input type="text" class="pesquisa" name="search" id="search">
                 <select name="type" id="type">
                     <option value="username">Username</option>
                     <option value="email">Email</option>
                     <option value="name">Nome</option>
                 </select>
-                <button class="try_ajax" type="submit" id="lbuttonadmin">Procurar</button>
+                <button class="try_ajax" id="lbuttonadmin">Procurar</button>
             </form>
             <button onclick="document.getElementById('id01').style.display='block'" id="lbuttonadmin" style="width:auto;">Adicionar Cliente</button>
             <!--<button type="submit" id="lbuttonadmin">Adicionar Cliente</button>
             <a href="/admin/clientes/find_client" class="abutton">Adicionar Cliente</a>-->
+            <div id="success"></div>
         </div>
         <br><hr><br>
 
@@ -64,28 +65,22 @@
             <a class="face-button" href="{{ route('deletecliente', $client->id) }}">
 
                 <div class="face-primary">
-                    <span class="icon fa fa-cloud"></span>
                     Apagar
                 </div>
 
                 <div class="face-secondary">
-                    <span class="icon fa fa-hdd-o"></span>
                     {{$client->username}}
                 </div>
             </a>
 
-<!--                 <form action="{{ route('deletecliente', $client->id) }}" class="button">
-                    <input type="submit" value="Editar" />
-                </form>
-                <form action="{{ route('deletecliente', $client->id) }}" class="button">
-                    <input type="submit" value="Eliminar" />
-                </form> -->
             </td>
         </tr>
         @endforeach
         </tbody>
     </table>
-    {{ $pessoa->links() }}
+    <div class="pages">
+        {{ $pessoa->links() }}
+    </div>
 </div>
 </div>
 
@@ -133,71 +128,34 @@ window.onclick = function(event) {
     }
 }
 
+function AjaxRequest(){
+    
+    $("tbody").val('loading...');
 
-/* $('.error').hide();
-    $(".button").click(function() {
-      // validate and process form here
-      
-      $('.error').hide();
-  	  var name = $("input#search").val();
-  		if (name == "") {
-        $("label#search_error").show();
-        $("input#search").focus();
-        return false;
-      }
-      
-    }); */
+    var search = $("#search").val();  // reading value from your text field here
+    var type = $("#type").val();
+    alert(search);
+    $.ajax({
+        type: "GET",
+        url: "/admin/clientes/find_client", // request handler
+        data: {
+            search: search,
+            type: type
+        },
+        //error case
+        error: function(xhr, status, error) {
+            alert(status);
+            alert(xhr.responseText);
+        },
+        success:function(result){
+            //updating table with result
+            $(".pages").html("");
+            $("tbody").html(result);
+        }
+    });
+    return false;
 
-
-
-
-
-
-
-
-
-
-$(document).ready(function(){
-    $("#lbuttonadmin").click(function(){
-
-        var search = $("#search").val();  // reading value from your text field here
-        var type = $("#type").val();
-        alert(type);
-        $.ajax({
-            type: "GET",
-            url: "/admin/clientes/find_client",                  // where you want to pass your request
-            data: {
-                search: search,
-                type: type
-            },   // passing textfield values to desired php page
-            error: function(xhr, status, error) {
-                alert(status);
-                alert(xhr.responseText);
-            },
-            success:function(result){
-                //alert("Esta a dar resultado");
-               // $(".faturas").html(result);  // fetching and placing your result
-               // $('.faturas').load(result);
-
-            }
-        });
-    }); 
-});
-
-
-
-
-    /*$('.try_ajax').click(function (event) {
-      //clearsection
-      $('.faturas').html("");
-      // Avoid the link click from loading a new page
-      event.preventDefault();
-      
-      // Load the content from the link's href attribute
-      $('.faturas').load($('.try').attr('action'));
-      });*/
-
-
+}
 
     $('form.button').on('click', function() {
         var choice = confirm('Tem a certeza que quer eliminar este Cliente?');
