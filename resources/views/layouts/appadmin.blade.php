@@ -26,7 +26,8 @@
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar Admina">
 		<img src="/uploads/avatars/{{Auth::user()->avatar}}">
-        <br><h2>{{Auth::user()->username}}</h2></a>
+        <br><h2>{{Auth::user()->username}}</h2><h5>Administrator</h5></a>
+        
   </header>
 	<ul id="ulperfil">
         <li tabindex="0" class="icon-dashboard"><span><a id="ref" href="/admin">Dashboard</a></span></li>
