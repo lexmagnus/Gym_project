@@ -76,8 +76,14 @@ Route::group(['prefix' => '/home/{username}'], function(){
     Route::post('/edit', 'PerfilController@edit');
 });*/
 
-Route::get('services', 'ServicesController@services');
+//Route::get('services', 'ServicesController@services');
 Route::get('services', 'EventController@index');
+
+Route::post('services', [
+    'uses' => 'EventController@addClass',
+    'as' => 'class.create',
+    'middleware' => 'auth'
+    ]);
 
 Route::get('pt', [
     'uses' => 'ChatController@getPT',

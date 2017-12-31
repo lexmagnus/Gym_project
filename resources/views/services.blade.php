@@ -16,24 +16,41 @@
              {!! $calendar->script() !!}
         </div>
             <div id="right">
-                    <h1>Insert classes</h1>
-                <form role="form" method="POST" action="/home/{{Auth::user()->username}}/services">
+                    <!--<h1>Insert classes</h1><hr>
+                    <h3>Please insert the classes bellow:</h3>
+                    <form role="form" method="POST" action="/services">
+                        <input type="text" name="title" placeholder="Nome da aula" value="{{ old('title') }}" required autofocus><br><br>
+                        <input type="text" name="room" placeholder="Sala de aula" value="{{ old('room') }}" required autofocus><br><br>
+                        <label><b>Starts at</b></label>
+                        <input type="Datetime" name="start_date" placeholder="Ano-mês-diaTh:m" value="{{ old('start_date') }}" required autofocus><br><br>
+                        <label><b>Ends at</b></label>
+                        <input type="Datetime" name="end_date" placeholder="Ano-mês-diaTh:m" value="{{ old('end_date') }}" required autofocus><br><br>
+                        <label><b>Color </b></label>
+                        <input type="enum" placeholder="Red, Green, Blue, Grey, Orange"  name="color" value="{{ old('color') }}" required autofocus><br><br>
+                        <input type="submit" value="Insert Class!">
+                    </form>-->
+            @if (Auth::user()->isAdmin() OR Auth::user()->isInst())
+                <h1>Insert classes</h1><br><hr><br><br>
+                <h3></h3>Please insert the classes bellow:</h3>
+                <br><br>
+                <form role="form" method="POST" action="{{ route('class.create') }}">
 
                     {{ csrf_field() }}
 
                     <label><b>Class name</b></label>
-                    <input type="text" placeholder="Nome aula" id="title" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
-
+                    <input type="text" placeholder="Nome aula" id="title" style="width:50%;" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
+                    <br><br>
                     <label><b>Classroom</b></label>
-                    <input type="text" placeholder="Sala de aula" id="room" type="room" class="form-control" name="room" value="{{ old('room') }}" required autofocus>
+                    <input type="text" placeholder="Sala de aula" id="room" type="room" style="width:50%;" class="form-control" name="room" value="{{ old('room') }}" required autofocus>
                     @if ($errors->has('room'))
                         <span>
                         <strong>{{ $errors->first('room') }}</strong>
                         <br>
                         </span>
                     @endif
+                    <br><br>
                     <label><b>Starts at</b></label>
-                    <input type="DateTime" placeholder="Ano-mês-diaTh:m" id="start_date" type="start_date" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
+                    <input type="DateTime" placeholder="Ano-mês-diaTh:m" id="start_date" style="width:50%;"type="start_date" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
                     <br>
                     @if ($errors->has('start_date'))
                         <span>
@@ -41,8 +58,9 @@
                         <br>
                         </span>
                     @endif
+                    <br><br>
                     <label><b>Ends at</b></label>
-                    <input type="Datetime" placeholder="Ano-mês-diaTh:m" id="end_date" type="end_date" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
+                    <input type="Datetime" placeholder="Ano-mês-diaTh:m" id="end_date" style="width:50%;"type="end_date" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
                     <br>
                     @if ($errors->has('end_date'))
                         <span>
@@ -50,8 +68,9 @@
                         <br>
                         </span>
                     @endif
-                     <label><b>Color </b></label>
-                    <input type="enum" placeholder="Red, Green, Blue, Grey, Orange" id="color" type="color" class="form-control" name="color" value="{{ old('color') }}" required autofocus>
+                    <br><br>
+                    <label><b>Color </b></label>
+                    <input type="enum" placeholder="Red, Green, Blue, Grey, Orange" id="color" style="width:50%;" type="color" class="form-control" name="color" value="{{ old('color') }}" required autofocus>
                     <br>
                     @if ($errors->has('color'))
                         <span>
@@ -59,9 +78,11 @@
                         <br>
                         </span>
                     @endif
+                    <br><br>
                     <button type="submit" id="lbutton">Save</button>
 
-                </form>
+                </form>  
+            @endif
             </div>
         <div class="clear"></div>
     </div>
