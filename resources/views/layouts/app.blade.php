@@ -77,11 +77,20 @@
 					
 				</form>
 			</li>
-			<li class="liteste"><a href="/register">Inscrição</a></li>
-			<li class="liteste"><a href="#about">Sobre</a></li>
-			<li class="liteste"><a href="#pricing_table">Preços</a></li>
-			<li class="liteste"><a href="#serv">Serviços</a></li>
-			<li class="liteste"><a href="#home">Home</a></li>
+			@if(Request::is('register'))
+				<li class="liteste"><a href="/register">Inscrição</a></li>
+				<li class="liteste"><a href="/#about">Sobre</a></li>
+				<li class="liteste"><a href="/#pricing_table">Preços</a></li>
+				<li class="liteste"><a href="/#serv">Serviços</a></li>
+				<li class="liteste"><a href="/#home">Home</a></li>
+			
+			@else
+				<li class="liteste"><a href="/register">Inscrição</a></li>
+				<li class="liteste"><a href="#about">Sobre</a></li>
+				<li class="liteste"><a href="#pricing_table">Preços</a></li>
+				<li class="liteste"><a href="#serv">Serviços</a></li>
+				<li class="liteste"><a href="#home">Home</a></li>
+			@endif
 			
           </ul>
 		</nav>
