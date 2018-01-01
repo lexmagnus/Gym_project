@@ -6,12 +6,12 @@
     <ul class="breadcrumb">
         <li><a href="/home">Home</a></li>
         <li><a href="/admin">Admin</a></li>
-        <li>Clientes</li>
+        <li>Personal Trainer</li>
     </ul>
-    <h1>Clientes<small>Administrator</small></h1>
+    <h1>Personal Trainers <small>Administrator</small></h1>
     <div class="adminbox">
         <div class="admin_input">
-            <form id="try" action="/admin/clientes/find_client" method="GET">
+            <form id="try" action="/admin/clientes/find_pt" method="GET">
                 <input type="text" class="pesquisa" name="search" id="search">
                 <select name="type" class="select_type" id="type">
                     <option value="username">Username</option>
@@ -20,7 +20,7 @@
                 </select>
                 <button class="try_ajax" onclick="return AjaxRequest();" id="lbuttonadmin">Procurar</button>
             </form>
-            <button class="inlineform" onclick="document.getElementById('id01').style.display='block'" id="lbuttonadmin" style="width:auto;">Adicionar Cliente</button>
+            <button class="inlineform" onclick="document.getElementById('id01').style.display='block'" id="lbuttonadmin" style="width:auto;">Adicionar PT</button>
             <!--<button type="submit" id="lbuttonadmin">Adicionar Cliente</button>
             <a href="/admin/clientes/find_client" class="abutton">Adicionar Cliente</a>-->
         </div>
@@ -93,7 +93,7 @@
 
 
 
-            <a class="face-button" id="face-buttonid" onclick="return Ajaxdelete({{$client->id}});" href="/admin/pt/delete">
+            <a class="face-button" id="face-buttonid" onclick="return Ajaxdelete({{$client->id}});" href="/admin/cliente/delete">
 
                 <div class="face-primary">
                     Apagar
@@ -121,7 +121,7 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/admin/clientes/add" method="POST">
+  <form class="modal-content animate" action="/admin/pt/add" method="POST">
     {!! csrf_field() !!}
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -145,7 +145,7 @@
         <label><b>Confirm Password</b></label>
         <input type="password" placeholder="Password: madeiragym" class="input_modal" name="password_confirmation" id="password_confirmation" required>
             
-        <button onclick="return AjaxPOST();" id="lbutton" type="submit">Adicionar Cliente</button>
+        <button onclick="return AjaxPOST();" id="lbutton" type="submit">Adicionar PT</button>
     </div>
 
   
@@ -196,7 +196,7 @@ function AjaxRequest(){
     alert(search);
     $.ajax({
         type: "GET",
-        url: "/admin/clientes/find_client", // request handler
+        url: "/admin/pt/find_pt", // request handler
         data: {
             search: search,
             type: type
@@ -226,7 +226,7 @@ function Ajaxdelete(id){
     if(choice === true) {
         $.ajax({
         type: "GET",
-        url: "/admin/cliente/delete", // request handler
+        url: "/admin/pt/delete", // request handler
         data: {id: id},
         //error case
         error: function(xhr, status, error) {
@@ -260,7 +260,7 @@ function AjaxPOST(){
     alert(CSRF_TOKEN);
     $.ajax({
         type: "POST",
-        url: "/admin/clientes/add", // request handler
+        url: "/admin/pt/add", // request handler
         data: {
             _token: CSRF_TOKEN,
             username: username,
@@ -277,7 +277,8 @@ function AjaxPOST(){
         success:function(result){
             //updating table with result
             $("#success").html("");
-            $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
+            $("#success").html('<div class="success"><strong>'+result.success+'</strong></div>').delay(3000).fadeOut();
+            $("tbody").append(result);
         }
     });
     return false;

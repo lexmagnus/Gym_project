@@ -14,6 +14,7 @@ use App\User;
 use Validator;
 use App\Pessoa;
 use App\Cliente;
+use App\Instrutor;
 use App\Morada;
 use Mail;
 
@@ -92,7 +93,7 @@ class AdminController extends Controller
                                     </div>
 
                                     <div class='face-secondary'>
-                                        ".$pess->username."
+                                        Editar
                                     </div>
                                 </a>
 
@@ -102,7 +103,7 @@ class AdminController extends Controller
                                         Apagar
                                     </div>
                                     <div class='face-secondary'>
-                                        ".$pess->username."
+                                        Apagar
                                     </div>
                                 </a>
                             </td>
@@ -150,5 +151,148 @@ class AdminController extends Controller
         
             $output="Cliente inserido com sucesso!";
             return Response($output);
+    }
+
+    public function pt()
+    {
+        //return all clients
+        $pessoa = DB::table('pessoas')
+            ->join('users', 'users.id', '=', 'pessoas.user_id')
+            ->join('instrutors', 'pessoas.id', '=', 'instrutors.pessoa_id')
+            ->select('users.*', 'pessoas.name', 'pessoas.contacto')
+            ->paginate(6);
+            
+            //dd($pessoa);
+            return view('admin.pt',compact('pessoa'));
+    }
+
+    public function create_pt(Request $request){
+
+        $output="";
+        DB::table('users')->insert([
+            ['username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'verifyToken' => Str::random(40),]
+        ]);
+
+        $id=DB::getPdo()->lastInsertId();
+
+        DB::table('pessoas')->insert([
+            ['name' => $request->name,
+            'user_id' => $id]
+        ]);
+
+        $id2=DB::getPdo()->lastInsertId();
+        //dd($id2);
+        DB::table('instrutors')->insert([
+            ['pessoa_id' => $id2]
+        ]);
+
+        $thisUser = User::find($id);
+        
+        Mail::to($request->email)->send(new verifyEmail($thisUser));
+
+        $output.="<tr>".
+                "<td style='text-align: center;'>".$thisUser->id."</td>".
+                "<td style='text-align: center;'>".$request->username."</td>".
+                "<td style='text-align: center;'>".$request->email."</td>".
+                "<td style='text-align: center;'>".$request->name."</td>".
+                "<td style='text-align: center;'> </td>".
+                "<td style='text-align: center;'>".
+                "<a class='face-button' href='".route('deletecliente', $thisUser->id)."'>
+
+                        <div class='face-primary'>
+                            Editar
+                        </div>
+
+                        <div class='face-secondary'>
+                            Editar
+                        </div>
+                    </a>
+                            
+                    <a class='face-button' href='".route('deletecliente', $thisUser->id)."'>
+
+                        <div class='face-primary'>
+                            Apagar
+                        </div>
+                        <div class='face-secondary'>
+                            Apagar
+                        </div>
+                    </a>
+                </td>
+                </tr>";
+            return Response($output);
+    }
+
+    public function find_pt(Request $request){
+            
+        if($request->ajax()){
+            $output="";
+            
+            if(($request->type) == "name"){
+                $pessoa = DB::table('pessoas')
+                    ->join('users', 'users.id', '=', 'pessoas.user_id')
+                    ->join('instrutors', 'pessoas.id', '=', 'instrutors.pessoa_id')
+                    ->select('users.*', 'pessoas.name', 'pessoas.contacto')
+                    ->where("pessoas.".$request->type, '=', $request->search)
+                    ->paginate(6);
+                
+                }else{
+                    $pessoa = DB::table('pessoas')
+                        ->join('users', 'users.id', '=', 'pessoas.user_id')
+                        ->join('instrutors', 'pessoas.id', '=', 'instrutors.pessoa_id')
+                        ->select('users.*', 'pessoas.name', 'pessoas.contacto')
+                        ->where("users.".$request->type, '=', $request->search)
+                        ->paginate(6);
+                }
+                
+                if($pessoa){
+                
+                foreach ($pessoa as $key => $pess) {
+                        
+                    $output.="<tr>".
+                            "<td style='text-align: center;'>".$pess->id."</td>".
+                            "<td style='text-align: center;'>".$pess->username."</td>".
+                            "<td style='text-align: center;'>".$pess->email."</td>".
+                            "<td style='text-align: center;'>".$pess->name."</td>".
+                            "<td style='text-align: center;'>".$pess->contacto."</td>".
+                            "<td style='text-align: center;'>".
+                                "<a class='face-button' href='".route('deletecliente', $pess->id)."'>
+
+                                    <div class='face-primary'>
+                                        Editar
+                                    </div>
+
+                                    <div class='face-secondary'>
+                                        Editar
+                                    </div>
+                                </a>
+
+                                <a class='face-button' href='".route('deletecliente', $pess->id)."'>
+
+                                    <div class='face-primary'>
+                                        Apagar
+                                    </div>
+                                    <div class='face-secondary'>
+                                        Apagar
+                                    </div>
+                                </a>
+                            </td>
+                            </tr>";
+                        }
+                        return Response($output);
+                    
+                    }
+                }
+            }
+
+    public function deletept(Request $request){
+        User::find($request->id)->delete();
+
+        $output = "Personal Trainer eliminado";
+        
+        return Response($output);
+
     }
 }
