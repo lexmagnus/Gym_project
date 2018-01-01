@@ -333,6 +333,7 @@ input[type=password] {
 }
 
 #lbuttonadmin{
+  border-radius: 8px;
   font-size: 12px;
   background-color: #35424a;
   color: white;
@@ -400,7 +401,22 @@ input[type=password] {
 
 #forgot:hover {
   color: #0423ad;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
+
+/*===================================== ADMIN SECTION =======================================*/
+
+.admin_input .select_type{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 30px;
+  line-height: 20px;
+  /*width: 200px;*/
+  vertical-align: middle;
+  /*padding: 5px 10px 5px 10px !important;*/
+    width: 15%;
+    /*margin: 10px;*/
+  }
 
 /* #create_account{
     float: left;
@@ -477,17 +493,20 @@ input[type=password] {
       
     }
 
-    .admin_input .pesquisa{
+    .admin_input{
+      text-align: center;
+    }
+    
+    .admin_input .pesquisa {
       
-      border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     height: 30px;
     line-height: 20px;
-    /*width: 200px;*/
     vertical-align: middle;
     padding: 5px 10px 5px 10px !important;
-      width: 53%;
-      margin: 20px;
+    width: 40%;
+    margin: 20px;
     }
 
 /*==========================BOXES  DE AVISO====================*/

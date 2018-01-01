@@ -13,7 +13,7 @@
         <div class="admin_input">
             <form id="try" action="/admin/clientes/find_client" method="GET">
                 <input type="text" class="pesquisa" name="search" id="search">
-                <select name="type" id="type">
+                <select name="type" class="select_type" id="type">
                     <option value="username">Username</option>
                     <option value="email">Email</option>
                     <option value="name">Nome</option>
@@ -24,8 +24,8 @@
             <!--<button type="submit" id="lbuttonadmin">Adicionar Cliente</button>
             <a href="/admin/clientes/find_client" class="abutton">Adicionar Cliente</a>-->
         </div>
+        <div id="success"></div>
         <br><hr><br>
-
     <table class="faturas">
         <thead>
             <tr>
@@ -39,8 +39,8 @@
         </thead>
         <tbody>
         @foreach($pessoa as $client)
-        <tr>
-            <td style="text-align: center;">{{$client->id}}</td>
+        <tr class="row_{{$client->id}}">
+            <td id="id_value" style="text-align: center;">{{$client->id}}</td>
             <td style="text-align: center;">{{$client->username}}</td>
             <td style="text-align: center;">{{$client->email}}</td>
             <td style="text-align: center;">{{$client->name}}</td>
@@ -61,7 +61,7 @@
                 </div>
             </a>
 
-            <a class="face-button" id="face-buttonid" href="{{ route('deletecliente', $client->id) }}">
+            <a class="face-button" id="face-buttonid" onclick="return Ajaxdelete({{$client->id}});" href="/admin/cliente/delete">
 
                 <div class="face-primary">
                     Apagar
@@ -86,7 +86,8 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/admin/clientes/add" method="POST">
+    {!! csrf_field() !!}
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="/uploads/avatars/default.jpg" alt="Avatar" class="avatar">
@@ -94,19 +95,22 @@
 
     <div class="containerm">
 
-        <label><b>Nome</b></label>
-        <input type="text" placeholder="Nome" name="uname" class="input_modal" required>
-
         <label><b>Username</b></label>
-        <input type="text" placeholder="Username" name="uname" class="input_modal" required>
+        <input type="text" placeholder="Username" name="username" id="username" class="input_modal" required>
+
+        <label><b>Nome</b></label>
+        <input type="text" placeholder="Nome" name="name" id="name" class="input_modal" required>
+
+        <label><b>E-Mail Address</b></label>
+        <input type="text" placeholder="Email" name="email" id="email" class="input_modal" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="psw" required>
+        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="password" id="password" required>
 
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="psw" required>
+        <label><b>Confirm Password</b></label>
+        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="password_confirmation" id="password_confirmation" required>
             
-        <button id="lbutton" type="submit">Adicionar Cliente</button>
+        <button onclick="return AjaxPOST();" id="lbutton" type="submit">Adicionar Cliente</button>
     </div>
 
   
@@ -149,6 +153,7 @@
 
 var modal = document.getElementById('id01');
 var modal2 = document.getElementById('id02');
+var insert = document.getElementById('lbutton');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -157,6 +162,9 @@ window.onclick = function(event) {
     }
     if (event.target == modal2){
         modal2.style.display = "none";
+    }
+    if (event.target == insert){
+        modal.style.display = "none";
     }
 }
 
@@ -189,14 +197,73 @@ function AjaxRequest(){
 
 }
 
-    $('.face-buttonid').on('click', function() {
-        var choice = confirm('Tem a certeza que quer eliminar este Cliente?');
-        if(choice === true) {
+function Ajaxdelete(id){
 
-            return true;
+    //alert(id);
+    //var parent = $(this).parent();
+    $tr = $(this).closest("tr");
+
+    var choice = confirm('Tem a certeza que quer eliminar este Cliente?');
+    if(choice === true) {
+        $.ajax({
+        type: "GET",
+        url: "/admin/cliente/delete", // request handler
+        data: {id: id},
+        //error case
+        error: function(xhr, status, error) {
+            alert(status);
+            alert(xhr.responseText);
+        },
+        success:function(result){
+            //updating table with result
+            $('.row_'+id).remove();
+            $("#success").html("");
+            $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
+        }
+    });
         }
         return false;
+    
+        
+
+}
+
+
+function AjaxPOST(){
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var username = $("#username").val();
+    var name = $("#name").val();  // reading value from your text field here
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var password_confirmation = $("#password_confirmation").val();
+    
+    alert(CSRF_TOKEN);
+    $.ajax({
+        type: "POST",
+        url: "/admin/clientes/add", // request handler
+        data: {
+            _token: CSRF_TOKEN,
+            username: username,
+            name: name,
+            email: email,
+            password: password,
+            password_confirmation: password_confirmation
+        },
+        //error case
+        error: function(xhr, status, error) {
+            alert(status);
+            alert(xhr.responseText);
+        },
+        success:function(result){
+            //updating table with result
+            $("#success").html("");
+            $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
+        }
     });
+    return false;
+
+}
     
 
 </script>

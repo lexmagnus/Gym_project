@@ -117,8 +117,23 @@ Route::get('/pagamentos', 'PagamentosController@pagamentos');
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
     Route::get('/admin/clientes', 'AdminController@clientes')->name('admin');
+    Route::post('/admin/clientes/add', 'AdminController@create_client')->name('add_client');
+    /*Route::post('/admin/clientes/add', function() {
+	
+        $data = Input::except('_token');
+        DB::table('users')->insert(
+            ['email' => 'john@example.com', 'votes' => 0]
+        );
+     
+        //Fetch the last record inserted
+        $id=DB::getPdo()->lastInsertId();
+     
+        $inserted_data = DB::table('tbl_posts')->where('id',$id)->first();
+        return Response::json(['success'=>$inserted_data]);
+        
+    });*/
     Route::get('/admin/clientes/find_client', 'AdminController@find_client')->name('find_client');
-    Route::get('/admin/delete_{id}', 'AdminController@deleteCliente')->name('deletecliente');
+    Route::get('/admin/cliente/delete', 'AdminController@deleteCliente')->name('deletecliente');
     //another routes...
 });
 

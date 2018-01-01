@@ -77,7 +77,7 @@
 					
 				</form>
 			</li>
-			@if(Request::is('register'))
+			@if(Request::is('register') || Request::is('login'))
 				<li class="liteste"><a href="/register">Inscrição</a></li>
 				<li class="liteste"><a href="/#about">Sobre</a></li>
 				<li class="liteste"><a href="/#pricing_table">Preços</a></li>
