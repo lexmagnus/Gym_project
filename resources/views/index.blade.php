@@ -56,15 +56,15 @@
                 <div id="serv">
                             <div id="col_servico">
                             <div id="topserv"><img id="first" src="images/wallpapers/first.png" alt="primeira"></div>
-                            <div id="bottomserv"><p><br>Se pretende fazer um breve aquecimento ou um treino cardiovascular, disponibilizamos o melhor equipamento de cardio, com aparelhos de marcas líderes a nivel mundial, como a STAR TRAC. O espaço é composto por passadeiras, elipticas, bicicletas e máquinas de remo. Todas as máquinas são de simples e fácil utilização.</p></div>
+                            <div id="bottomserv"><p><br>Para começar com o insubstituível aquecimento proporcionamos-lhe uma grande quantidade de máquinas da maior qualidade. Temos passadeiras, elipticas, remos e muito mais! Todas as máquinas que temos foram compradas com a intenção de proporcionar uma fácil utilização, por tanto, não tenha medo, venha experimentar!</p></div>
                             </div>
                             <div id="col_servico">
                             <div id="topserv"><img id="second" src="images/wallpapers/second.png" alt="segunda"></div>
-                            <div id="bottomserv"><p><br>Para exercícios de força, a nossa área de pesos livres possui uma vasta gama de halteres, barras, bancos, tranversais a cabo e vários tipos de cordas e cabos.</p></div>
+                            <div id="bottomserv"><p><br>Quer ganhar músculo? É no nosso ginásio! Para ganhar força necessita de pesos adequados a si. Portanto aqui temos quaisqueres pesos que necessite, venha testar! Para além disso, possuímos tudo o que precisar de halteres, barras, bancos, etc...</p></div>
                             </div>
                             <div id="col_servico">
                             <div id="topserv"><img id="last" src="images/wallpapers/last.png" alt="ultima"></div>
-                            <div id="bottomserv"><p><br>As nossas máquinas de força são de fácil utilização e adequam-se a todos os níveis de aptidão física, permitindo trabalhar todos os músculos do corpo. Para efetuar abdominais e alongamentos, existe uma área própria para o efeito equipada com confortáveis colchões, bolas de pilates e aparelhos para exercícios de equilibrio.</p></div>
+                            <div id="bottomserv"><p><br>Qualquer que seja a sua dificuldade ou objetivo, seja perder peso ou até ganhá-lo, ou simplesmente manter, temos todo o equipamento disponível para si com a maior facilidade de utilização. Uma variade de equipamento que lhe permite efectuar qualquer tipo de treino. Em áreas designadas a fitness, o espaço é constituido pela melhor qualidade de colchões, bolas de pilates e muito mais.</p></div>
                             </div>
                 </div>
 

@@ -97,12 +97,12 @@
 		<!-- menu hamburger aberto--> 
 	<div id="side-menu" class="side-nav">
     	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-    	<li class="liteste2"><a href="#home">Home</a></li>
-		<li class="liteste2"><a href="#serv">Serviços</a></li>
-		<li class="liteste2"><a href="#pricing_table">Preços</a></li>
-		<li class="liteste2"><a href="#about">Sobre</a></li>
-		<li class="liteste2"><a href="#regist">Inscrição</a></li>
-		<li class="liteste2"><a href="/login">Login</a></li>
+    	<li class="liteste2"><a href="#home" onclick="closeSlideMenu()">Home</a></li>
+		<li class="liteste2"><a href="#serv" onclick="closeSlideMenu()">Serviços</a></li>
+		<li class="liteste2"><a href="#pricing_table" onclick="closeSlideMenu()">Preços</a></li>
+		<li class="liteste2"><a href="#about" onclick="closeSlideMenu()">Sobre</a></li>
+		<li class="liteste2"><a href="#regist" onclick="closeSlideMenu()">Inscrição</a></li>
+		<li class="liteste2"><a href="/login" onclick="closeSlideMenu()">Login</a></li>
 	  </div>
 
 		@else
@@ -177,7 +177,8 @@
 				} 
 			})
 		});
-
+		//Fechar menu com click fora do menu 
+		
 		//efeito de slowdown quando o utilizador volta ao topo
 		/*$(window).scroll(function(){
 			$("header").stop().animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );
