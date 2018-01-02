@@ -13,7 +13,7 @@ class CreateAdministradorTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrador', function (Blueprint $table) {
+        Schema::create('administrators', function (Blueprint $table) {
             $table->integer('salario')->nullable();
             $table->integer('pessoa_id')->unsigned()->unique();
             $table->primary('pessoa_id');
@@ -29,6 +29,6 @@ class CreateAdministradorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrador');
+        Schema::dropIfExists('administrators');
     }
 }

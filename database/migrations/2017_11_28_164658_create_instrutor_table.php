@@ -13,7 +13,7 @@ class CreateInstrutorTable extends Migration
      */
     public function up()
     {
-        Schema::create('instrutor', function (Blueprint $table) {
+        Schema::create('instrutors', function (Blueprint $table) {
             $table->integer('salario')->nullable();
             $table->enum('categoria', array('Personal Training Yoga', 'Personal Training Pilates', 'Personal Training'))->nullable();
             $table->integer('pessoa_id')->unsigned()->unique();
@@ -30,6 +30,6 @@ class CreateInstrutorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instrutor');
+        Schema::dropIfExists('instrutors');
     }
 }

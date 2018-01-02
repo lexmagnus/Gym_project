@@ -76,7 +76,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   }
   #bottomserv{
     float: bottom;
-    height: 55%;
+    height: 60%;
     width: 100%;
     display: block;
     text-align: center;
@@ -153,7 +153,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 @media(max-width:700px) {
   .col-pricing {
     width: 33,3%;
-    height: 80%;
+    max-height: 100px;
   }
 }
 
@@ -333,12 +333,13 @@ input[type=password] {
 }
 
 #lbuttonadmin{
-  font-size: 14px;
+  border-radius: 8px;
+  font-size: 12px;
   background-color: #35424a;
   color: white;
-  padding: 14px;
-  margin: 10px;
-  width: 20%;
+  padding: 10px;
+  margin: 5px;
+  width: 10%;
 }
 
 #lbuttonadmin:hover {
@@ -400,7 +401,22 @@ input[type=password] {
 
 #forgot:hover {
   color: #0423ad;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
+
+/*===================================== ADMIN SECTION =======================================*/
+
+.admin_input .select_type{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 30px;
+  line-height: 20px;
+  /*width: 200px;*/
+  vertical-align: middle;
+  /*padding: 5px 10px 5px 10px !important;*/
+    width: 15%;
+    /*margin: 10px;*/
+  }
 
 /* #create_account{
     float: left;
@@ -471,17 +487,26 @@ input[type=password] {
     -webkit-border-radius: 5px;
     border: #e8491d 3px solid; }
 
+    .admin_input #try, .admin_input #lbuttonadmin{
+      /*position: relative;*/
+      display: inline;
+      
+    }
+
     .admin_input{
-      display: inline;
+      text-align: center;
     }
-
-    .adminbox .pesquisa{
-      width: 48%;
-      margin: 20px;
-    }
-
-    .pesquisa, #lbuttonadmin{
-      display: inline;
+    
+    .admin_input .pesquisa {
+      
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 30px;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 5px 10px 5px 10px !important;
+    width: 40%;
+    margin: 20px;
     }
 
 /*==========================BOXES  DE AVISO====================*/

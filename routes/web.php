@@ -117,8 +117,17 @@ Route::get('/pagamentos', 'PagamentosController@pagamentos');
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
     Route::get('/admin/clientes', 'AdminController@clientes')->name('admin');
+    Route::post('/admin/clientes/add', 'AdminController@create_client')->name('add_client');
+    Route::post('/admin/clientes/update_{id}', 'AdminController@update_client')->name('update_client');
     Route::get('/admin/clientes/find_client', 'AdminController@find_client')->name('find_client');
-    Route::get('/admin/delete_{id}', 'AdminController@deleteCliente')->name('deletecliente');
+    Route::get('/admin/cliente/delete', 'AdminController@deleteCliente')->name('deletecliente');
+    Route::get('/admin/pt', 'AdminController@pt')->name('admin_pt');
+    Route::post('/admin/pt/add', 'AdminController@create_pt')->name('add_pt');
+    Route::get('/admin/pt/delete', 'AdminController@deletept')->name('deletept');
+    Route::get('/admin/pt/find_pt', 'AdminController@find_pt')->name('find_pt');
+    Route::get('/admin/admin', 'AdminController@admin')->name('admin_admin');
+    Route::get('/admin/pt/find_admin', 'AdminController@find_admin')->name('find_admin');
+
     //another routes...
 });
 

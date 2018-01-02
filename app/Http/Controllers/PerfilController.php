@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\User;
+use App\User;
 use Illuminate\Support\Facades\Input;
+use App\Mail\verifyEmail;
 use Session;
+use Mail;
 use Hash;
 use App\Pessoa;
 use App\Morada;
@@ -23,7 +25,10 @@ class PerfilController extends Controller
         //dd($pessoa->morada_id);
         //$posts = Morada::all();
         //dd($posts);
+        //$thisUser = User::find($user->id);
+        //Mail::to('lexmagnus1088@gmail.com')->send(new verifyEmail($thisUser));
         if(($pessoa->morada_id) != NULL){
+        
         $morada = Morada::where(['id'=>($pessoa->morada_id)])->first();
         return view('perfil',compact('user', 'pessoa', 'morada'));
     }else

@@ -31,10 +31,9 @@
   </header>
 	<ul id="ulperfil">
         <li tabindex="0" class="icon-dashboard"><span><a id="ref" href="/admin">Dashboard</a></span></li>
-        <li tabindex="0" class="icon-dashboard"><span><a id="ref" href="/admin/clientes">Clientes</a></span></li>
-        <li tabindex="0" class="icon-customers"><span><a id="ref" href="/home/{{Auth::user()->username}}/edit">Alterar dados Pessoais</a></span></li>
-        <li tabindex="0" class="icon-users"><span><a class="try_ajax" href="/home/{{Auth::user()->username}}/altEmail">Alterar email</a></span></li>
-        <li tabindex="0" class="icon-settings"><span><a class="try_ajax" href="/home/{{Auth::user()->username}}/altPassword">Alterar Password</a></span></li>
+        <li tabindex="0" class="icon-customers"><span><a id="ref" href="/admin/clientes">Clientes</a></span></li>
+        <li tabindex="0" class="icon-customers"><span><a id="ref" href="/admin/pt">Personal Trainers</a></span></li>
+        <li tabindex="0" class="icon-customers"><span><a id="ref" href="/admin/admin">Administrators</a></span></li>
   </ul>
 </nav>
 
