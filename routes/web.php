@@ -125,6 +125,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/pt/add', 'AdminController@create_pt')->name('add_pt');
     Route::get('/admin/pt/delete', 'AdminController@deletept')->name('deletept');
     Route::get('/admin/pt/find_pt', 'AdminController@find_pt')->name('find_pt');
+    Route::get('/admin/admin', 'AdminController@admin')->name('admin_admin');
+    Route::get('/admin/pt/find_admin', 'AdminController@find_admin')->name('find_admin');
 
     //another routes...
 });
