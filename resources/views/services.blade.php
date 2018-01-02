@@ -16,19 +16,6 @@
              {!! $calendar->script() !!}
         </div>
             <div id="right">
-                    <!--<h1>Insert classes</h1><hr>
-                    <h3>Please insert the classes bellow:</h3>
-                    <form role="form" method="POST" action="/services">
-                        <input type="text" name="title" placeholder="Nome da aula" value="{{ old('title') }}" required autofocus><br><br>
-                        <input type="text" name="room" placeholder="Sala de aula" value="{{ old('room') }}" required autofocus><br><br>
-                        <label><b>Starts at</b></label>
-                        <input type="Datetime" name="start_date" placeholder="Ano-mês-diaTh:m" value="{{ old('start_date') }}" required autofocus><br><br>
-                        <label><b>Ends at</b></label>
-                        <input type="Datetime" name="end_date" placeholder="Ano-mês-diaTh:m" value="{{ old('end_date') }}" required autofocus><br><br>
-                        <label><b>Color </b></label>
-                        <input type="enum" placeholder="Red, Green, Blue, Grey, Orange"  name="color" value="{{ old('color') }}" required autofocus><br><br>
-                        <input type="submit" value="Insert Class!">
-                    </form>-->
             @if (Auth::user()->isAdmin() OR Auth::user()->isInst())
                 <h1>Insert classes</h1><br><hr><br><br>
                 <h3></h3>Please insert the classes bellow:</h3>

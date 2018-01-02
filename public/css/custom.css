@@ -1033,11 +1033,11 @@ ul.breadcrumb li a:hover {
 
 /*========================== CHAT ========================*/
 .pt-body {
-  
   padding: 20px;
-  min-width: 100%;
+  width: 100%;
   background-color: #fff;
 }
+
 
 .container-chat-img {
   width: 100%;
@@ -1168,6 +1168,7 @@ input.textarea {
   width: 100%;
   margin: 20px;
 }
+
  #left {
    padding: 20px;
    background-color: #ffffff;
