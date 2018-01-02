@@ -38,11 +38,9 @@
                                 <ul class="price-box">
                                 <li class="header-pricing">{{ $plan->name }}</li>
                                 <li class="emph"><strong>{{ $plan->currency }} {{ $plan->amount / 100 }} / {{ $plan->interval }}</strong></li>
-                                <li><strong>120GB</strong> Disk Space</li>
-                                <li><strong>100GB</strong> Data Transfer</li>
-                                <li><strong>Unlimited</strong> Domains</li>
-                                <li><strong>Unlimited</strong> Email Accounts</li>
-                                <li><strong>UNlimited</strong> FTP Accounts</li>
+                                <li><strong>5</strong> Sessões com PT</li>
+                                <li><strong>3</strong> Vezes p/ Semana</li>
+                                <li><strong>2</strong> Consultas de nutricionismo</li>
                                 <li class="emph">
                                     @if( $is_subscribed &&  ( $subscription->stripe_plan ==  $plan->id ) )
                                         <a href="#" class="button-pricing" onClick="return false;">Plano Atual</a>

@@ -96,11 +96,9 @@
                                 <ul class="price-box">
                                 <li class="header-pricing">Simple</li>
                                 <li class="emph"><strong>€ 39.90</strong> / Mês</li>
-                                <li><strong>10</strong> Sessões com PT</li>
-                                <li><strong>10GB</strong> Data Transfer</li>
-                                <li><strong>2</strong> Domains</li>
-                                <li><strong>50</strong> Email Accounts</li>
-                                <li><strong>2</strong> FTP Accounts</li>
+                                <li><strong>5</strong> Sessões com PT</li>
+                                <li><strong>3</strong> Vezes p/ Semana</li>
+                                <li><strong>2</strong> Consultas de nutricionismo</li>
                                 <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
@@ -109,11 +107,9 @@
                                 <ul class="price-box best">
                                 <li class="header-pricing header-orange">Standard</li>
                                 <li class="emph"><strong>€ 59.90</strong> / Mês</li>
-                                <li><strong>75GB</strong> Disk Space</li>
-                                <li><strong>50GB</strong> Data Transfer</li>
-                                <li><strong>10</strong> Domains</li>
-                                <li><strong>100</strong> Email Accounts</li>
-                                <li><strong>Unlimited</strong> FTP Accounts</li>
+                                <li><strong>10</strong> Sessões com PT</li>
+                                <li><strong>4</strong> Vezes p/ Semana</li>
+                                <li><strong>5</strong> Consultas de nutricionismo</li>
                                 <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
@@ -122,11 +118,9 @@
                                 <ul class="price-box">
                                 <li class="header-pricing">Advanced</li>
                                 <li class="emph"><strong>€ 99.90</strong> / Mês</li>
-                                <li><strong>120GB</strong> Disk Space</li>
-                                <li><strong>100GB</strong> Data Transfer</li>
-                                <li><strong>Unlimited</strong> Domains</li>
-                                <li><strong>Unlimited</strong> Email Accounts</li>
-                                <li><strong>UNlimited</strong> FTP Accounts</li>
+                                <li><strong>Ilimitado</strong> Sessões com PT</li>
+                                <li><strong>Ilimitado</strong> Vezes p/ Semana</li>
+                                <li><strong>Ilimitado</strong> Consultas de nutricionismo</li>
                                 <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
