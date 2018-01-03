@@ -129,7 +129,7 @@
             </section>
             <section id="slide4">
                 <div id="about">
-                            <div id="googleMap" style="width:80%; height:600px; margin: 0 auto;position: relative; z-index: -1;"></div>
+                            <div id="googleMap" style="width:80%; height:600px; margin: 0 auto;position: relative; z-index: 900;"></div>
                                 
                                 <script>
                                 function myMap() {
