@@ -50,7 +50,7 @@
 
             <td style="text-align: center;">
 
-            <a class="face-button" id="{{$client->id}}" onclick="return Modal({{$client->id}});">
+            <a class="face-button" id="{{$client->id}}" data-id="{{$client->id}}" onclick="document.getElementById('id02').style.display='block'">
 
                 <div class="face-primary">
                     Editar
@@ -276,15 +276,20 @@ function AjaxPOST(){
         },
         success:function(result){
             //updating table with result
+            
             $("#success").html("");
             $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
-        }
+        },
+        complete: function(){
+            $('#id01').modal('hide');
+            //Here, you are executing your event loop, or in this example the api "hide" for the "#mymodal" id element.
+    }
     });
     return false;
 
 }
 
-function AjaxUpdate(value){
+function AjaxUpdate(id){
 
 /*var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 var username = $("#username").val();
@@ -292,8 +297,12 @@ var name = $("#name").val();  // reading value from your text field here
 var email = $("#email").val();
 var password = $("#password").val();
 var password_confirmation = $("#password_confirmation").val();*/
+//var password = $('id').val();
+//var $form = $(e.target),
+ //   id    = $(e.target).find('[id="{{$client->id}}"]').val()
+//var id = $(this).attr('data-id');
 
-alert(value);
+alert(id);
 $.ajax({
     type: "POST",
     url: "/admin/clientes/add", // request handler

@@ -99,7 +99,7 @@
                                 <li><strong>5</strong> Sessões com PT</li>
                                 <li><strong>3</strong> Vezes p/ Semana</li>
                                 <li><strong>2</strong> Consultas de nutricionismo</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="/register" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
 
@@ -110,7 +110,7 @@
                                 <li><strong>10</strong> Sessões com PT</li>
                                 <li><strong>4</strong> Vezes p/ Semana</li>
                                 <li><strong>5</strong> Consultas de nutricionismo</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="/register" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
 
@@ -121,7 +121,7 @@
                                 <li><strong>Ilimitado</strong> Sessões com PT</li>
                                 <li><strong>Ilimitado</strong> Vezes p/ Semana</li>
                                 <li><strong>Ilimitado</strong> Consultas de nutricionismo</li>
-                                <li class="emph"><a href="#regist" class="button-pricing">Sign Up</a></li>
+                                <li class="emph"><a href="/register" class="button-pricing">Sign Up</a></li>
                                 </ul>
                             </div>
                 </div>

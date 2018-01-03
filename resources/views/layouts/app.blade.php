@@ -27,9 +27,9 @@
         <div id="branding">
 		<a href="../"><h1><span class="highlight">Madeira</span> Gym</h1></a>
 		</div>
+		<nav class="navclass">
 
 		@if (Auth::guest())
-        <nav class="navclass">
 		<!-- menu hamburger --> 
 		<span class="open-slide">
       			<a href="#" onclick="openSlideMenu()">
@@ -134,7 +134,7 @@
 				<li class="liteste"><a href="/pt">Contate o PT</a></li>
 				<li class="liteste"><a href="/plan">Pacotes</a></li>
 				<li class="liteste"><a href="/services">Serviços</a></li>
-				<li class="liteste"><a href="/admin">Admin</a></li>
+				<li class="liteste"><a href="/admin/clientes">Admin</a></li>
 				<li class="liteste"><a href="/home">Home</a></li>
 			@else
 				<li class="liteste"><a href="/pt">Contate o PT</a></li>

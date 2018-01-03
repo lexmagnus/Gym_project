@@ -28,75 +28,6 @@
 		<a href="../"><h1><span class="highlight">Madeira</span> Gym</h1></a>
 		</div>
 
-		@if (Auth::guest())
-        <nav class="navclass">
-		<!-- menu hamburger --> 
-		<span class="open-slide">
-      			<a href="#" onclick="openSlideMenu()">
-        	<svg width="30" height="30">
-            	<path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-            	<path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-            	<path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
-        	</svg>
-      			</a>
-	</span>
-	<script>
-    function openSlideMenu(){
-      document.getElementById('side-menu').style.width = '250px';
-     // document.getElementById('main').style.marginLeft = '250px';
-    }
-
-    function closeSlideMenu(){
-      document.getElementById('side-menu').style.width = '0';
-     // document.getElementById('main').style.marginLeft = '0';
-    }
-  </script>
-          <ul class="ulteste">
-		  	<li id="login">
-            <!-- <li id="login"> -->
-				<!--<a href="{{ url('/login') }}">Login</a>-->
-				<a id="login-trigger" href="#" onClick="return false;">Login</a>
-			
-				<form id="login-form" role="form" method="POST" action="{{ url('/login') }}">
-					{{ csrf_field() }}
-					<label>
-						<b>Username:</b>
-					</label>
-
-					<input type="text" placeholder="Username" id="username" type="username" class="form-control" name="username" required>
-					<label>
-						<b>Password:</b>
-					</label>
-					<input type="password" placeholder="Password" class="form-control" name="password" required>
-					
-					<input type="checkbox" name="remember" {{ old( 'remember') ? 'checked' : ''}}> Remember </br>
-					<button type="submit" id="lbutton">LOGIN</button>
-
-					<a id="create_account" href="#regist">Register</a><b> - </b>
-					<a id="forgot" href="{{ url('/password/reset') }}">Forgot your Password?</a>
-					
-				</form>
-			</li>
-			<li class="liteste"><a href="/register">Inscrição</a></li>
-			<li class="liteste"><a href="#about">Sobre</a></li>
-			<li class="liteste"><a href="#pricing_table">Preços</a></li>
-			<li class="liteste"><a href="#serv">Serviços</a></li>
-			<li class="liteste"><a href="#home">Home</a></li>
-			
-          </ul>
-		</nav>
-		<!-- menu hamburger aberto--> 
-	<div id="side-menu" class="side-nav">
-    	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-    	<li class="liteste2"><a href="#home">Home</a></li>
-		<li class="liteste2"><a href="#serv">Serviços</a></li>
-		<li class="liteste2"><a href="#pricing_table">Preços</a></li>
-		<li class="liteste2"><a href="#about">Sobre</a></li>
-		<li class="liteste2"><a href="#regist">Inscrição</a></li>
-		<li class="liteste2"><a href="/login">Login</a></li>
-	  </div>
-
-		@else
 		<ul class="ullogout">
 		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
 			<li class="dropdown">
@@ -134,7 +65,6 @@
 				<li class="liteste"><a href="/home">Home</a></li>
 			@endif
 		  </ul>
-		  @endif
 
       </div>
 	  
