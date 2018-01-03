@@ -21,11 +21,15 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   border-width: 1px;*/
   /*height: 500px;*/
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   padding-top: 100px;
   
   /*padding-bottom: 100px; */}
   /* CORES DE BACKGROUND */
+  #spacer{
+    width: 100%;
+    height: 95px;
+  }
   #serv {
     width: 80%;
   }
@@ -40,10 +44,7 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
     background-color: #f4f4f4;
     display:flex;
   }
-  #about
-  {
-    
-  }
+ 
   /* FIM CORES DE BACKGROUND */
   h2 {
     text-align: center;
@@ -146,9 +147,14 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
   text-decoration: none;
   font-size: 18px;
 }
-
-@media(max-width:1000px) {
-  .col-pricing {
+/* RESPONSIVE TABELAS*/ 
+@media(max-width:500px) {
+  #col_servico {
+    width: 100%;
+  }
+}
+@media(max-width:500px) {
+  #price-box {
     width: 100%;
   }
 }
@@ -313,7 +319,7 @@ input[type=DateTime]{
     z-index: 900;
     outline: none;
     display: inline-block;
-    position: fixed;
+    /*position: fixed;*/
     border-top: 3px solid;
     border-color: #e8491d;
     background-color: #35424a;
@@ -466,6 +472,7 @@ input[type=DateTime]{
   /*position: relative;*/
   /*z-index:-1;*/
   margin-top: 0.5%;
+  margin-left: 20%;
   right: 0;
   /*clear: both;*/
   background-color: #f4f4f4;
