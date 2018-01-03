@@ -17,7 +17,7 @@
         </div>
         @endforeach
         
-    
+        <h1 id="h1chat"> Introduza a sua mensagem: </h1>
         <div class="message">
             <form action="{{ route('post.create') }}" method="post">
                 <!--<textarea id="new_post" name="body" rows="5" placeholder="Type a message."></textarea>-->
