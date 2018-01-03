@@ -9,7 +9,11 @@
             <img  class="img-chat"src="/uploads/avatars/default.jpg" alt="Avatar" class="left">
             <div class="container-chat ">
                 <article data-postid="{{ $post->id }}">
-                    <h3 id="nome"> {{ $post->user->username.": "}}</h3>
+                        @if($post->user->isInst == 1)
+                           <h3 id="nome" style="color:green;">  PT_{{ $post->user->username.": "}}</h3>
+                        @else 
+                          <h3 id="nome">   {{ $post->user->username.": "}}</h3>
+                        @endif
                     <p>{{ $post->body }}</p>
                     <span class="time-right">{{ "created at: ".$post->created_at }}</span>
                 </article>

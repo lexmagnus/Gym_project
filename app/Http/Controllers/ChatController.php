@@ -15,7 +15,7 @@ class ChatController extends Controller
 {
     public function getPT()
     {
-        $posts = Chat::orderBy('created_at', 'desc')->get();
+        $posts = Chat::orderBy('created_at', 'asc')->get();
         return view('pt',['posts' => $posts]);
     }
 
