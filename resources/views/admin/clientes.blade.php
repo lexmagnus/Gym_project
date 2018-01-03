@@ -50,7 +50,7 @@
 
             <td style="text-align: center;">
 
-            <a class="face-button" id="{{$client->id}}" data-id="{{$client->id}}" onclick="document.getElementById('id02').style.display='block'">
+            <a class="face-button" id="{{$client->id}}" data-id="{{$client->id}}" onclick="return AjaxUpdate({{$client->id}});">
 
                 <div class="face-primary">
                     Editar
@@ -60,38 +60,6 @@
                     Editar
                 </div>
             </a>
-
-            <div id="id02" class="modal">
-                <form class="modal-content animate" action="/admin/clientes/update" method="POST" style="text-align: left;">
-                    <div class="imgcontainer">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="/uploads/avatars/default.jpg" alt="Avatar" class="avatar">
-                    </div>
-
-                    <div class="containerm">
-                        <label><b>Username</b></label>
-                        <input type="text" placeholder="Username" name="uusername" id="uusername" class="input_modal" required>
-
-                        <label><b>Nome</b></label>
-                        <input type="text" placeholder="Nome" name="uname" id="uname" class="input_modal" required>
-
-                        <label><b>E-Mail Address</b></label>
-                        <input type="text" placeholder="Email" name="uemail" id="uemail" class="input_modal" required>
-
-                        <label><b>Password</b></label>
-                        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="upassword" id="upassword" required>
-
-                        <label><b>Confirm Password</b></label>
-                        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="upassword_confirmation" id="upassword_confirmation" required>
-                            
-                        <button onclick="return AjaxUpdate({{$client->id}});" id="lbutton" type="submit">Atualizar Dados do cliente</button>
-                    </div>
-
-                
-                </form>
-                </div>
-
-
 
             <a class="face-button" id="face-buttonid" onclick="return Ajaxdelete({{$client->id}});" href="/admin/pt/delete">
 
@@ -153,6 +121,37 @@
 </div>
 
 
+<div id="id02" class="modal">
+    <form class="modal-content animate" action="/admin/clientes/update" method="POST" style="text-align: left;">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="/uploads/avatars/default.jpg" alt="Avatar" class="avatar">
+        </div>
+
+                    <div class="containerm">
+                        <label><b>Username</b></label>
+                        <input type="text" placeholder="Username" name="uusername" id="uusername" class="input_modal" required>
+
+                        <label><b>Nome</b></label>
+                        <input type="text" placeholder="Nome" name="uname" id="uname" class="input_modal" required>
+
+                        <label><b>E-Mail Address</b></label>
+                        <input type="text" placeholder="Email" name="uemail" id="uemail" class="input_modal" required>
+
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="upassword" id="upassword" required>
+
+                        <label><b>Confirm Password</b></label>
+                        <input type="password" placeholder="Password: madeiragym" class="input_modal" name="upassword_confirmation" id="upassword_confirmation" required>
+                            
+                        <button class="updatecliente" id="lbutton" type="submit">Atualizar Dados do cliente</button>
+                    </div>
+
+                
+                </form>
+                </div>
+
+
 
 
 
@@ -175,16 +174,6 @@ window.onclick = function(event) {
     if (event.target == insert){
         modal.style.display = "none";
     }
-}
-
-function Modal(id){
-    document.getElementById('id02').style.display='block';
-    var res = id;
-    
-    $('#id02').on('load', function() {
-    AjaxUpdate(id);
-    })
-    alert(id);
 }
 
 function AjaxRequest(){
@@ -217,7 +206,7 @@ function AjaxRequest(){
 }
 
 function Ajaxdelete(id){
-
+    
     //alert(id);
     //var parent = $(this).parent();
     $tr = $(this).closest("tr");
@@ -279,11 +268,7 @@ function AjaxPOST(){
             
             $("#success").html("");
             $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
-        },
-        complete: function(){
-            $('#id01').modal('hide');
-            //Here, you are executing your event loop, or in this example the api "hide" for the "#mymodal" id element.
-    }
+        }
     });
     return false;
 
@@ -301,32 +286,45 @@ var password_confirmation = $("#password_confirmation").val();*/
 //var $form = $(e.target),
  //   id    = $(e.target).find('[id="{{$client->id}}"]').val()
 //var id = $(this).attr('data-id');
+document.getElementById('id02').style.display='block';
+var id = id;
 
 alert(id);
-$.ajax({
-    type: "POST",
-    url: "/admin/clientes/add", // request handler
-    data: {
-        "_token": CSRF_TOKEN,
-        "id": res,
-        "username": username,
-        "name": name,
-        "email": email,
-        "password": password,
-        "password_confirmation": password_confirmation
-    },
-    //error case
-    error: function(xhr, status, error) {
-        alert(status);
-        alert(xhr.responseText);
-    },
-    success:function(result){
-        //updating table with result
-        $("#success").html("");
-        $("#success").html('<div class="success"><strong>'+result+'</strong></div>').delay(3000).fadeOut();
-    }
+$('.updatecliente').click(function(){
+
+    //var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var username = $("#uusername").val();
+    var name = $("#uname").val();  // reading value from your text field here
+    var email = $("#uemail").val();
+    var password = $("#upassword").val();
+    var password_confirmation = $("#upassword_confirmation").val();
+    alert(username);
+
+    $.ajax({
+        type: "POST",
+        url: "/admin/clientes/update", // request handler
+        data: {
+            id: id,
+            username: username,
+            name: name,
+            email: email,
+            password: password,
+            password_confirmation: password_confirmation
+        },
+        
+        //error case
+        error: function(jqxhr, status, exception) {
+            //alert('Exception:', exception);
+            alert('data: ', data);
+        },
+        success:function(result){
+            //updating table with result
+            $("#success").html("");
+            $("#success").html('<div class="success"><strong>'+result+'</strong></div>')/*.delay(3000).fadeOut()*/;
+        }
+    });
+
 });
-return false;
 
 }
     

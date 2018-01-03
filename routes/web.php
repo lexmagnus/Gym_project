@@ -118,7 +118,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
     Route::get('/admin/clientes', 'AdminController@clientes')->name('admin');
     Route::post('/admin/clientes/add', 'AdminController@create_client')->name('add_client');
-    Route::post('/admin/clientes/update_{id}', 'AdminController@update_client')->name('update_client');
+    Route::post('/admin/clientes/update', 'AdminController@update_client')->name('update_client');
     Route::get('/admin/clientes/find_client', 'AdminController@find_client')->name('find_client');
     Route::get('/admin/cliente/delete', 'AdminController@deleteCliente')->name('deletecliente');
     Route::get('/admin/pt', 'AdminController@pt')->name('admin_pt');

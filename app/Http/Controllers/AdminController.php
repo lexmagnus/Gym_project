@@ -126,25 +126,22 @@ class AdminController extends Controller
 
     public function create_client(Request $request){
 
-            DB::table('users')->insert([
+            DB::table('users')->insert(
                 ['username' => $request->username,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
-                'verifyToken' => Str::random(40),]
-            ]);
+                'verifyToken' => Str::random(40)]);
 
             $id=DB::getPdo()->lastInsertId();
 
-            DB::table('pessoas')->insert([
+            DB::table('pessoas')->insert(
                 ['name' => $request->name,
-                'user_id' => $id]
-            ]);
+                'user_id' => $id]);
 
             $id2=DB::getPdo()->lastInsertId();
 
-            DB::table('clientes')->insert([
-                ['pessoa_id' => $id2]
-            ]);
+            DB::table('clientes')->insert(
+                ['pessoa_id' => $id2]);
 
             $thisUser = User::find($id);
             
@@ -152,6 +149,25 @@ class AdminController extends Controller
         
             $output="Cliente inserido com sucesso!";
             return Response($output);
+    }
+
+    public function update_client(Request $request){
+        dd($request);
+        DB::table('users')
+            ->where('id', $request->id)
+            ->update(
+                ['username' => $request->username,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'verifyToken' => Str::random(40)]);
+        
+        DB::table('pessoas')
+            ->where('user_id', $request->id)
+            ->update(['name' => $request->name]);
+
+        $output = "Cliente Atualizado!";
+        
+        return Response($output);
     }
 
     public function pt()
