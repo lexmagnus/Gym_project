@@ -15,11 +15,5 @@ class PagesController extends Controller
         }else{
             return view('index');
         }
-        
-    }
-
-    public function inscricao(){
-        Session::flash('status', 'Crie um registo.');
-        return redirect('/#regist');
     }
 }
