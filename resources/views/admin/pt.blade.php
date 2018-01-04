@@ -177,16 +177,6 @@ window.onclick = function(event) {
     }
 }
 
-function Modal(id){
-    document.getElementById('id02').style.display='block';
-    var res = id;
-    
-    $('#id02').on('load', function() {
-    AjaxUpdate(id);
-    })
-    alert(id);
-}
-
 function AjaxRequest(){
     
     $("tbody").val('loading...');
