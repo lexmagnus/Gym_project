@@ -54,15 +54,15 @@
             </section>
             <section id="slide2">
                 <div id="serv">
-                            <div id="col_servico">
+                            <div class="col_servico">
                             <div id="topserv"><img id="first" src="images/wallpapers/first.png" alt="primeira"></div>
                             <div id="bottomserv"><p><br>Para começar com o insubstituível aquecimento proporcionamos-lhe uma grande quantidade de máquinas da maior qualidade. Temos passadeiras, elipticas, remos e muito mais! Todas as máquinas que temos foram compradas com a intenção de proporcionar uma fácil utilização, por tanto, não tenha medo, venha experimentar!</p></div>
                             </div>
-                            <div id="col_servico">
+                            <div class="col_servico">
                             <div id="topserv"><img id="second" src="images/wallpapers/second.png" alt="segunda"></div>
                             <div id="bottomserv"><p><br>Quer ganhar músculo? É no nosso ginásio! Para ganhar força necessita de pesos adequados a si. Portanto aqui temos quaisqueres pesos que necessite, venha testar! Para além disso, possuímos tudo o que precisar de halteres, barras, bancos, etc...</p></div>
                             </div>
-                            <div id="col_servico">
+                            <div class="col_servico">
                             <div id="topserv"><img id="last" src="images/wallpapers/last.png" alt="ultima"></div>
                             <div id="bottomserv"><p><br>Qualquer que seja a sua dificuldade ou objetivo, seja perder peso ou até ganhá-lo, ou simplesmente manter, temos todo o equipamento disponível para si com a maior facilidade de utilização. Uma variade de equipamento que lhe permite efectuar qualquer tipo de treino. Em áreas designadas a fitness, o espaço é constituido pela melhor qualidade de colchões, bolas de pilates e muito mais.</p></div>
                             </div>

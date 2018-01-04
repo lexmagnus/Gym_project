@@ -28,7 +28,7 @@
 		<a href="../"><h1><span class="highlight">Madeira</span> Gym</h1></a>
 		</div>
 
-		<ul class="ullogout">
+		<ul class="ulteste">
 		<img id="log-teste" src="/uploads/avatars/{{ Auth::user()->avatar }}">
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">
@@ -65,7 +65,45 @@
 				<li class="liteste"><a href="/home">Home</a></li>
 			@endif
 		  </ul>
+      <span class="open-slide">
+      			<a href="#" onclick="openSlideMenu()">
+        	<svg width="30" height="30">
+            	<path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            	<path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            	<path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        	</svg>
+      			</a>
+	</span>
+	<script>
+    function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+     // document.getElementById('main').style.marginLeft = '250px';
+    }
 
+    function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+     // document.getElementById('main').style.marginLeft = '0';
+    }
+  </script>
+  <div id="side-menu" class="side-nav">
+    	<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    	<li class="liteste2"><a href="/home" onclick="closeSlideMenu()">Home</a></li>
+    <li class="liteste2"><a href="/services" onclick="closeSlideMenu()">Serviços</a></li>
+    @if(Auth::user()->isAdmin())
+		<li class="liteste2"><a href="/admin/clientes" onclick="closeSlideMenu()">Admin</a></li>
+		@endif
+		<li class="liteste2"><a href="/plan" onclick="closeSlideMenu()">Pacotes</a></li>
+		<li class="liteste2"><a href="/pt" onclick="closeSlideMenu()">Contate o PT</a></li>
+		<li class="liteste2"><a href="/home/{{Auth::user()->username}}">Ver Perfil</a>
+		<li class="liteste2"><a href="{{ route('invoices') }}">Ver Faturas</a>
+		<li class="liteste2"><a href="{{ url('/logout') }}" onclick="event.preventDefault();
+											document.getElementById('logout-form').submit();">
+								Logout
+					</a><form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+								{{ csrf_field() }}
+							<button type="submit" id="lobutton">logout</button>
+					</form>
+	  </div>
       </div>
 	  
     </header>

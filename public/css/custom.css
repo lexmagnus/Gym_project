@@ -12,7 +12,6 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 #about,
 #pricing_table,
 #regist,#home {
-  display: block;
   margin-top: 0 auto;
   margin-bottom: 0 auto;
   /*ver bem isto*/
@@ -59,11 +58,11 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 
   /* =============================== END GALERIA =============================*/ 
   /*================================ servicos ================================= */
-  #col_servico,#topserv,#bottomserv{
+  .col_servico,#topserv,#bottomserv{
     /*border-style: solid;
     border-width: 1px;*/
   }
-  #col_servico{
+  .col_servico{
     width: 25%;
     height: 400px;
     margin-left: 40px;
@@ -149,10 +148,11 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 }
 /* RESPONSIVE TABELAS*/ 
 @media(max-width:500px) {
-  #col_servico {
-    width: 100%;
+  .col_servico {
+    width: auto;
   }
 }
+
 @media(max-width:500px) {
   #price-box {
     width: 100%;
@@ -195,6 +195,9 @@ F:\MEI\ACR_Project\Gym_project>sass --watch resources\assets\sass\custom.scss:pu
 
 @media (max-width: 1100px) {
   .ulteste {
+    display: none; } }
+@media (max-width: 1300px) {
+  .ullogout {
     display: none; } }
 @media (min-width: 1100px) {
   .open-slide {
