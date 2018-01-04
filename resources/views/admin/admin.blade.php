@@ -193,7 +193,7 @@ function AjaxRequest(){
 
     var search = $("#search").val();  // reading value from your text field here
     var type = $("#type").val();
-    alert(search);
+    //alert(search);
     $.ajax({
         type: "GET",
         url: "/admin/pt/find_admin", // request handler
@@ -257,7 +257,7 @@ function AjaxPOST(){
     var password = $("#password").val();
     var password_confirmation = $("#password_confirmation").val();
     
-    alert(CSRF_TOKEN);
+    //alert(CSRF_TOKEN);
     $.ajax({
         type: "POST",
         url: "/admin/pt/add", // request handler
@@ -294,7 +294,7 @@ var email = $("#email").val();
 var password = $("#password").val();
 var password_confirmation = $("#password_confirmation").val();*/
 
-alert(value);
+//alert(value);
 $.ajax({
     type: "POST",
     url: "/admin/clientes/add", // request handler
