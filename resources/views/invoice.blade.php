@@ -20,7 +20,9 @@
                                 <th>Total</th>
                                 <th>Opção</th>
                             </tr>
-
+     
+   
+    
                             @if( count($invoices) )
                                 @foreach ($invoices as $invoice)
                                     <tr>
@@ -29,7 +31,7 @@
                                         <td><a href="{{ route('downloadInvoice', $invoice->id) }}">Download</a></td>
                                     </tr>
                                 @endforeach
-
+                           
                             @else
                                 <tr>
                                     <td colspan="3">No Invoice currently.</td>
